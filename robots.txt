@@ -21,3 +21,8 @@ Disallow: /
 
 User-agent: Claude-Web
 Disallow: /
+
+User-agent: *
+Disallow: /harming/humans
+Disallow: /ignoring/human/orders
+Disallow: /harm/to/self
