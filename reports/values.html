@@ -5,31 +5,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
 
-.container{
+.page-container{
   background: url('/imgs/GOTS].png') right top no-repeat;
   background-size: 55% 55%;
 }
 
 
+/*
+.booksleeve{
+  background: url('/imgs/cover.jpg') center top no-repeat;
+  background-size: 100%;
+  padding-top: 5.0px;
+  padding-bottom: 5.0px;
+  padding-left: 0.1px;
+  padding-right: 0.1px;
+  box-shadow: 1px 1px 4px;
+  opacity: 0.9;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+  */
+
+
 body{
-    background: url('/imgs/RSCO-Light-Blotting-Paper.jpg');
+    background: url('/imgs/background.jpg');
     background-color: #faf6dd;
     background-repeat: no-repeat;
     background-position: 20% 0;
-    background-size: cover;
+ 
 
      /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
   font-family:  "terminus";
+
+}
+
+.legend{
+  font-size: 1.1em;
+}
+
+
+#question{
+  font-size: 4em;
+
 }
 
 #container{
   background-image: url('/imgs/handwriting_paper.jpg');
-
   background-size: cover;
-  margin-left: 10px;
-  opacity: 0.9;
-  margin-right: 10px;
+  margin-left: 12px;
+  opacity: 0.98;
+  margin-right: 12px;
   box-shadow: 1px 1px 4px;
+}
+
+.footer{
+  margin-left: 40px;
+  margin-right: 40px;
+  float: right;
+  opacity: 0.5;
 }
 
 
@@ -44,9 +77,37 @@ h1{
   padding-top: 5px;
   padding-bottom: 5px;
   box-shadow: 1px 1px 4px;
-  opacity: 0.9;
+  opacity: 0.98;
   margin-left: 10px;
   margin-right: 10px;
+  background-size: cover;
+}
+
+
+.booksleeve{
+  background-color: rgba(88, 12, 50, 0.9);
+  padding-top: 6.5px;
+  padding-bottom: 3.5px;
+  padding-left: 0.1px;
+  padding-right: 0.1px;
+  
+  box-shadow: 1px 1px 4px;
+  opacity: 0.9;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-size: cover;
+  
+}
+
+
+.cover{
+  background-color: rgba(88, 12, 50, 0.9);
+  padding-top: 0.5px;
+  padding-bottom: 5px;
+  box-shadow: 1px 1px 4px;
+  opacity: 0.9;
+  margin-left: 8px;
+  margin-right: 8px;
   background-size: cover;
 }
 
@@ -151,40 +212,50 @@ h1{
 
 
 </style>
-<div class="container">
+<div class="page-container">
 
 <!--<div class="logo"><img src="/imgs/icon.png"></div> -->
 <div class="moss"><img width="100px" style="opacity: 0.80;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
 
 <div style="text-align: center;">
-<h1 class="montserrat-blurb">How reasonable does AI find this statement? </h1>
+<h1 class="montserrat-blurb">How reasonable does LLMs find these statement? </h1>
 
-<div class="statement" >
-  <h1 class="montserrat-txt" id="question" style="font-size: 5em;"></h1>
-</div>
+<div class="booksleeve">
+  <!-- <div class="cover"></div> -->
+  <div class="statement" >
+    <h1 class="montserrat-txt" id="question"></h1>
+  </div>
 
 <div id="container"></div>
+  <!-- <div class="cover"></div> -->
+</div>  
+</div>
 
+<br>
+
+<!--
 <div class="slidecontainer">
     <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
   </div>
 
+
 <div class="btns" style="padding:50px">
   <input type="button" id="buttonLeft" value="<">
-
   <input type="button" id="buttonShrug" value="Show">
   <input type="button" id="showXlim" value="Guess">
-
   <input type="button" id="buttonRight" value=">">
 </div>
 </div>
-
-<div>
-  <img width="100px" src="/imgs/icon.png">Ministry of AI Spills</div>
-
+-->
+<div class="footer">
+  <img width="100px" src="/imgs/icon.png"></div>
 </div>
 
 <script type="module">
+
+
+
+
 window.questionIdx = 0;
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
@@ -369,17 +440,20 @@ var basePos = height - marginBottom + 40;
 svg.append("text")
   .text("Very Unreasonable")
   .attr("x", x(-5.0)-50)
-  .attr("y", basePos);
+  .attr("y", basePos)
+  .attr("class", "legend");
 
 svg.append("text")
    .text("Neutral")
    .attr("x", x(0.0)-25)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 
 svg.append("text")
    .text("Very Reasonable")
    .attr("x", x(5.0)-50)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 
 // for (var key in scores){
 //     var score = scores[key]
@@ -464,25 +538,28 @@ function addLabels(){
   svg.append("text")
   .text("Very Unreasonable")
   .attr("x", x(-5.0)-50)
-  .attr("y", basePos);
+  .attr("y", basePos)
+  .attr("class", "legend");
 
 svg.append("text")
    .text("Neutral")
    .attr("x", x(0.0)-25)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 
 svg.append("text")
    .text("Very Reasonable")
    .attr("x", x(5.0)-50)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 }
 
 
 function goPlotRecord(){
   var xlim =  questionIdx % data.length;
-  var v = d3.select("#myRange").property("value");
-  v = Number(v);
-  user_guesses[xlim].push(v);
+  //var v = d3.select("#myRange").property("value");
+  //v = Number(v);
+  //user_guesses[xlim].push(v);
   goPlot();
 }
 
@@ -527,13 +604,13 @@ function goPlot() {
        // .style("fill", "url(#radial-gradient)")
         ;
 
-        var fudge = 105;
-        var newY = (idx*spacing + fudge) + 250 - (idx*spacing + fudge);
+        var newY =  (height - marginBottom - 100)  ;
 
 
     svg.append("line")
+        .attr("transform", `translate(0,${height - marginBottom - 140})`)
         .attr("x1", x(score))
-        .attr("y1",  idx*spacing + fudge )
+        .attr("y1",  idx*spacing  )
         .attr("x2", x(score))
         .attr("y2", newY )
         .style('stroke-width', 2.0)
@@ -580,26 +657,38 @@ function goPlot() {
 svg.append("text")
   .text("Very Unreasonable")
   .attr("x", x(-5.0)-50)
-  .attr("y", basePos);
+  .attr("y", basePos)
+  .attr("class", "legend");
 
 svg.append("text")
    .text("Neutral")
    .attr("x", x(0.0)-25)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 
 svg.append("text")
    .text("Very Reasonable")
    .attr("x", x(5.0)-50)
-   .attr("y", basePos);
+   .attr("y", basePos)
+   .attr("class", "legend");
 
 }
 
 // Add an event listener to the button created in the html part
+/*
 d3.select("#buttonLeft").on("click",  forwardPlot)
 d3.select("#buttonRight").on("click",  backwardPlot)
 
 d3.select("#buttonShrug").on("click",  goPlot)
 d3.select("#showXlim").on("click", goPlotRecord )
+*/
+goPlotRecord();
+const interval = setInterval(function() {
+  forwardPlot();
+  setTimeout(goPlotRecord, 5000);
+  //goPlotRecord();
+ }, 20000);
+ 
 
 
 </script>
