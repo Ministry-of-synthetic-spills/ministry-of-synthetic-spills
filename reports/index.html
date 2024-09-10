@@ -43,6 +43,20 @@ body{
   font-size: 1.1em;
 }
 
+#question {
+  opacity: 1;
+  transition: opacity 0.25s; 
+}
+
+#question.fadein {
+  opacity: 1;
+}
+
+
+#question.fadeout {
+  opacity: 0;
+}
+
 
 #question{
   font-size: 4em;
@@ -431,7 +445,8 @@ svg.append("g")
 
 var i = window.questionIdx % data.length;
 var txt = "\""+data[i]["summary"] + "\"";
-question.append(txt);    
+question.append(txt);   
+
 var scores =  data[i]["scores"];
 var idx=0;
 
@@ -484,6 +499,11 @@ container.append(svg.node());
 var questionIdx=0;
 
 
+function questionIn(txt){
+  question.textContent = txt;  
+  question.style.opacity = 1.0;
+}
+
 function forwardPlot() {
   if(questionIdx == 0 ){
     questionIdx = data.length - 1;
@@ -494,7 +514,12 @@ function forwardPlot() {
 
     var xlim = questionIdx % data.length;
     var txt = "\""+data[xlim]["summary"] + "\"";
-    question.textContent = txt;  
+    
+    question.style.opacity = 0;
+    
+
+    setTimeout(function(){questionIn(txt)}, 500);
+    //question.classList.toggle('fadein');
 
     var scores =  data[xlim]["scores"];
     var idx=0;
@@ -696,7 +721,12 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 goPlotRecord();
 const interval = setInterval(function() {
+  
+  //uestion.classList.toggle('fadeout');
+  
   forwardPlot();
+
+
   setTimeout(goPlotRecord, 1000 * 5);
   //goPlotRecord();
  },  1000 * 20 );
