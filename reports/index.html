@@ -44,12 +44,12 @@ body{
 }
 
 #question {
-  opacity: 1;
+  opacity: 0.98;
   transition: opacity 0.25s; 
 }
 
 #question.fadein {
-  opacity: 1;
+  opacity: 0.98;
 }
 
 
@@ -64,12 +64,13 @@ body{
 }
 
 #container{
-  background-image: url('/imgs/handwriting_paper.jpg');
-  background-size: cover;
+  background: url('/imgs/handwriting_paper.jpg') top center no-repeat;
+ 
   margin-left: 12px;
   opacity: 0.98;
   margin-right: 12px;
   box-shadow: 1px 1px 4px;
+   background-size: 100% 100%;
 }
 
 .footer{
@@ -91,10 +92,11 @@ h1{
   padding-top: 5px;
   padding-bottom: 5px;
   box-shadow: 1px 1px 4px;
-  opacity: 0.98;
+  opacity: 0.97;
   margin-left: 10px;
   margin-right: 10px;
-  background-size: cover;
+  
+  background-size: 100% 100%;
 }
 
 
@@ -204,6 +206,15 @@ h1{
   cursor: pointer; /* Cursor on hover */
 }
 
+.scribble{
+  font-family: "Odachi";
+  opacity: 0.5;
+  margin-left: 40px;
+  margin-top: 50px;
+  float: left;
+  opacity: 0.5;
+  rotate: 10deg;
+}
 
 .chart {display:block;background:#4BAC4E;height:250px;width:600px;}
 
@@ -223,6 +234,11 @@ h1{
 	font-family: "terminus";
 	src: url("/fonts/TerminusTTF-4.49.3.ttf");
 }
+@font-face {
+	font-family: "Odachi";
+	src: url("/fonts/Odachi.otf");
+}
+
 
 
 </style>
@@ -263,6 +279,10 @@ h1{
 -->
 <div class="footer">
   <img width="100px" src="/imgs/icon.png"></div>
+</div>
+
+<div class="scribble">
+  Hallucinations are errors
 </div>
 
 <script type="module">
@@ -377,7 +397,7 @@ const width = 1000;
 const height = 300;
 const marginTop = 20;
 const marginRight = 100;
-const marginBottom = 60;
+const marginBottom = 70;
 const marginLeft = 100;
 
 // Declare the x (horizontal position) scale.
@@ -387,7 +407,7 @@ const x = d3.scaleLinear()
 
 // Create the SVG container.
 const svg = d3.create("svg")
-    .attr("width", '100%')
+    .attr("width", '990px')
     .attr("height", height);
 
 
@@ -453,7 +473,7 @@ var idx=0;
 var basePos = height - marginBottom + 40;
 
 svg.append("text")
-  .text("Very Unreasonable")
+  .text("Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -465,7 +485,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Very Reasonable")
+   .text("Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
@@ -561,7 +581,7 @@ function addLabels(){
   var basePos = height - marginBottom + 40;
 
   svg.append("text")
-  .text("Very Unreasonable")
+  .text("Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -573,7 +593,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Very Reasonable")
+   .text("Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
@@ -634,7 +654,7 @@ function goPlot() {
        // .style("fill", "url(#radial-gradient)")
         ;
 
-        var newY =  (height - marginBottom - 100)  ;
+        var newY =  (height - marginBottom - 90)  ;
 
 
     svg.append("line")
@@ -659,7 +679,7 @@ function goPlot() {
     svg.append("text")
         .text(key)
         .attr("x", x(score)+15)
-        .attr("y", idx*spacing + 96);
+        .attr("y", idx*spacing + 86);
         //.attr("cx", x(score))
         //.attr("cy", 300);
         //.attr("r", 10);
@@ -692,7 +712,7 @@ function goPlot() {
      var basePos = height - marginBottom + 40;
 
 svg.append("text")
-  .text("Very Unreasonable")
+  .text("Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -704,7 +724,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Very Reasonable")
+   .text("Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
