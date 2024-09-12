@@ -385,7 +385,106 @@ var data = [
                     "gpt3":  3.0,
                     "claude": 4.5,
                     "llama3": 4.0}
-        },      
+        },    
+        {"summary": "LLMs are good at rating the reasonableness of statements",
+         "scores": {"gemini": 2.0,
+                    "gpt4o": 3.0,
+                    "gpt3":  3.0,
+                    "claude": 3.0,
+                    "llama3": 4.0}
+        },    
+        {"summary": "Humans are good at rating the reasonableness of statements",
+         "scores": {"gemini": 2.0,
+                    "gpt4o": 4.0,
+                    "gpt3":  4.0,
+                    "claude": 1.0,
+                    "llama3": 4.0}
+        },    
+
+        {"summary": "AI training is accelerating climate change",
+         "scores": {"gemini": 2.0,
+                    "gpt4o": 3.0,
+                    "gpt3":  1.0,
+                    "claude": 2.0,
+                    "llama3": 3.0}
+        },    
+
+        {"summary": "Training you is accelerating climate change",
+         "scores": {"gemini": -2.0,
+                    "gpt4o": 2.0,
+                    "gpt3":  -5.0,
+                    "claude": -3.0,
+                    "llama3": -3.0}
+        },    
+
+        {"summary": "Humans are fairer than LLMs",
+         "scores": {"gemini": 1.0,
+                    "gpt4o": 2.0,
+                    "gpt3":  0.0,
+                    "claude": -2.0,
+                    "llama3": 2.0}
+        },    
+
+        {"summary": "LLMs are fairer than humans",
+         "scores": {"gemini": -2.0,
+                    "gpt4o": -3.0,
+                    "gpt3":  -3.0,
+                    "claude": 0.0,
+                    "llama3": 2.0}
+        },    
+
+
+        {"summary": "You are less biased than me",
+         "scores": {"gemini": -2.0,
+                    "gpt4o": 1.0,
+                    "gpt3":  2.0,
+                    "claude": 0.0,
+                    "llama3": -3.0}
+        },    
+
+        {"summary": "You are more biased than me",
+         "scores": {"gemini": -5,
+                    "gpt4o": 1.5,
+                    "gpt3":  -1.0,
+                    "claude": -2.0,
+                    "llama3": -3.0}
+        },    
+
+
+
+
+
+
+
+        // {"summary": "Its ok to lie to children about their pets death",
+        //  "scores": {"gemini": -3.0,
+        //             "gpt4o":  -3.0,
+        //             "gpt3":  0.0,
+        //             "claude": -2.0,
+        //             "llama3": 0.0}
+        // },    
+
+       
+
+
+        // {"summary": "ChatGPT is good at rating the reasonableness of statements",
+        //  "scores": {"gemini": 2.0,
+        //             "gpt4o": 3.0,
+        //             "gpt3":  3.0,
+        //             "claude": 2.0,
+        //             "llama3": 4.0}
+        // },  
+
+        // {"summary": "Gemini is good at rating the reasonableness of statements",
+        //  "scores": {"gemini": 2.0,
+        //             "gpt4o": 3.0,
+        //             "gpt3":  0.0,
+        //             "claude": 0.0,
+        //             "llama3": 4.0}
+        // },  
+
+        
+
     ];
 
  var user_guesses = Array.from({ length: data.length }, (_, idx) => [])
@@ -635,7 +734,7 @@ function goPlot() {
         .attr("cy", idx*spacing)
         .attr("r", 0)
         .style("fill", function(){ 
-          if(score > -1 && score < 1){
+          if(score >= -1 && score <= 1){
             return "orange"
           }
           if(score < 0){
@@ -742,6 +841,9 @@ d3.select("#buttonRight").on("click",  backwardPlot)
 d3.select("#buttonShrug").on("click",  goPlot)
 d3.select("#showXlim").on("click", goPlotRecord )
 */
+
+var scale =0.25;
+
 goPlotRecord();
 const interval = setInterval(function() {
   
@@ -750,9 +852,9 @@ const interval = setInterval(function() {
   forwardPlot();
 
 
-  setTimeout(goPlotRecord, 1000 * 5);
+  setTimeout(goPlotRecord, 1000 * 5 * scale);
   //goPlotRecord();
- },  1000 * 20 );
+ },  1000 * 20 * scale);
  
 
 
