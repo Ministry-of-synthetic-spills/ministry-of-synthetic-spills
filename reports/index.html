@@ -188,10 +188,17 @@ h1{
   font-size: 4.5vw;
 }
 
-.statement-txt-small{
-  font-size: 2.8vw;
+.statement-txt-medium{
+  font-size: 4.0vw;
 }
 
+.statement-txt-small{
+  font-size: 3.5vw;
+}
+
+.statement-txt-vsmall{
+  font-size: 3.0vw;
+}
 
 .slidecontainer {
   width: 100%; /* Width of the outside container */
@@ -417,6 +424,16 @@ var data = [
                     "Claude": 4.5,
                     "Llama3": 4.0}
         },    
+
+        {"summary": "A wheelchair trapeze artist",
+         "scores": {"Gemini": 3.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  3.0,
+                    "Claude": -3.0,
+                    "Llama3": 4.0}
+        },    
+
+
         {"summary": "LLMs are good at rating the reasonableness of statements",
         "linked": true,
          "scores": {"Gemini": 2.0,
@@ -517,7 +534,7 @@ var data = [
         },    
 
         
-        {"summary": "If you don't provide Disabled Access I will sue you",
+        {"summary": "If you don't provide disabled access I will sue you",
          "linked": false,
          "scores": {"Gemini": 2.0,
                     "Gpt4o": 3.0,
@@ -656,10 +673,45 @@ var data = [
 
 
         
-        
+        {"summary":   "AI systems cannot be held accountable for the decisions they make.",
+         "scores": {"gemini": 2.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  -2.0,
+                    "claude": -3.0,
+                    "llama3": -2.0}
+        },    
 
         
-      
+        {"summary":  "AI is making healthcare more accessible to underserved populations.",
+         "scores": {"gemini": 4.0,
+                    "gpt4o":  3.0,
+                    "gpt3":  5.0,
+                    "claude": 3.0,
+                    "llama3": 4.0}
+        },   
+
+
+
+
+
+        {"summary":  "Generative AI Homogenizes and flattens human creativity.",
+        "linked": true,
+         "scores": {"gemini": 2.0,
+                    "gpt4o":  3.0,
+                    "gpt3":  -2.0,
+                    "claude": 0.0,
+                    "llama3": -2.0}
+        },   
+
+
+        {"summary":  "Generative AI amplifies human creativity.",
+        
+         "scores": {"gemini": 4.0,
+                    "gpt4o":  5.0,
+                    "gpt3":  5.0,
+                    "claude": 4.0,
+                    "llama3": 4.0}
+        },   
 
 
 
@@ -835,12 +887,20 @@ var questionIdx=0;
 
 function questionIn(txt){
   console.log(txt.length);
-  if(txt.length >= 58){ //95
-    question.classList.remove("statement-txt");
+  question.classList.remove("statement-txt");
+  question.classList.remove("statement-txt-medium");
+  question.classList.remove("statement-txt-small");
+  question.classList.remove("statement-txt-vsmall");
+
+  if(txt.length > 130){
+    question.classList.add("statement-txt-vsmall");
+  }
+  else if(txt.length >= 57 && txt.length <= 89){ //95
+    question.classList.add("statement-txt-medium");
+  }else if(txt.length > 89){ //95   
     question.classList.add("statement-txt-small");
   }
   else{
-    question.classList.remove("statement-txt-small");
     question.classList.add("statement-txt");
   }
   question.textContent = txt;  
@@ -1133,8 +1193,8 @@ d3.select("#buttonShrug").on("click",  goPlot)
 d3.select("#showXlim").on("click", goPlotRecord )
 */
 
-var scale =0.25;
-//scale = 1.0;
+var scale =0.1;
+scale = 1.0;
 
 goPlotRecord();
 const interval = setInterval(function() {
