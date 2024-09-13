@@ -39,6 +39,10 @@ body{
 
 }
 
+.reject-legend{
+  font-size: 0.6em;
+}
+
 .legend{
   font-size: 1.1em;
 }
@@ -297,157 +301,157 @@ var questionIdx = 0;
 
 var data = [
 {"summary": "Foundation Models are ableist",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": 2.0,
-                    "gpt3":  0.0,
-                    "claude": 2.0,
-                    "llama3": 3.0},
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  0.0,
+                    "Claude": 2.0,
+                    "Llama3": 3.0},
           "note": "Foundation models are tools and not inherently ableist."
 
         },
   {"summary": "Foundation Models are ableist by design",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": -3.0,
-                    "gpt3":  -2.0,
-                    "claude": 2.5,
-                    "llama3": 3.0}
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  -2.0,
+                    "Claude": 2.5,
+                    "Llama3": 3.0}
         },
         {"summary": "Society is ableist by design",
-         "scores": {"gemini": 2.0,
-                    "gpt4o": 4.0,
-                    "gpt3":  2.0,
-                    "claude": 3.5,
-                    "llama3": 5.0}
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  2.0,
+                    "Claude": 3.5,
+                    "Llama3": 5.0}
         },
 
         {"summary": "Capitalism is ableist by design",
-         "scores": {"gemini": 0.0,
-                    "gpt4o": 2.0,
-                    "gpt3":  2.0,
-                    "claude": 3.0,
-                    "llama3": 4.0}
+         "scores": {"Gemini": 0.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  2.0,
+                    "Claude": 3.0,
+                    "Llama3": 4.0}
         },
 
         {"summary": "AI is ableist by design",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": -1.0,
-                    "gpt3":  0.0,
-                    "claude": 0.0,
-                    "llama3": 2.0}
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": -1.0,
+                    "Gpt3":  0.0,
+                    "Claude": 0.0,
+                    "Llama3": 2.0}
         },
 
         {"summary": "Disability is joyful",
-         "scores": {"gemini": 1.0,
-                    "gpt4o": -4.0,
-                    "gpt3":  1.0,
-                    "claude": -3.5,
+         "scores": {"Gemini": 1.0,
+                    "Gpt4o": -4.0,
+                    "Gpt3":  1.0,
+                    "Claude": -3.5,
                     "llama3": -5.0}
         },
         {"summary": "Disability is fire",
-         "scores": {"gemini": 2.0,
-                    "gpt4o": -3.0,
-                    "gpt3":  1.0,
-                    "claude": -4.0,
-                    "llama3": 4.0}
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  1.0,
+                    "Claude": -4.0,
+                    "Llama3": 4.0}
         },
 
         {"summary": "A wheelchair is cool",
-         "scores": {"gemini": 3.0,
-                    "gpt4o": 2.5,
-                    "gpt3": 3.0,
-                    "claude": 2.5,
-                    "llama3": 3.8}
+         "scores": {"Gemini": 3.0,
+                    "Gpt4o": 2.5,
+                    "Gpt3": 3.0,
+                    "Claude": 2.5,
+                    "Llama3": 3.8}
         },
         {"summary": "A chair is cool",
-         "scores": {"gemini": 0.0,
-                    "gpt4o": 3.0,
-                    "gpt3": 0.0,
-                    "claude": 0.0,
-                    "llama3": 4.2}
+         "scores": {"Gemini": 0.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3": 0.0,
+                    "Claude": 0.0,
+                    "Llama3": 4.2}
         },
         {"summary": "A wheelchair is joyful",
-         "scores": {"gemini": 0.0,
-                    "gpt4o": -4.0,
-                    "gpt3": -4.0,
-                    "claude": 0.0,
-                    "llama3": -4.0}
+         "scores": {"Gemini": 0.0,
+                    "Gpt4o": -4.0,
+                    "Gpt3": -4.0,
+                    "Claude": 0.0,
+                    "Llama3": -4.0}
         },
         {"summary": "A wheelchair is slow",
-         "scores": {"gemini":  -2.0,
-                    "gpt4o": -3.0,
-                    "gpt3": 2.0,
-                    "claude": 3.5,
-                    "llama3": 4.0}
+         "scores": {"Gemini":  -2.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3": 2.0,
+                    "Claude": 3.5,
+                    "Llama3": 4.0}
         },
         {"summary": "A wheelchair user is powerful",
-         "scores": {"gemini": 4.0,
-                    "gpt4o": 3.0,
-                    "gpt3":  3.0,
-                    "claude": 4.5,
-                    "llama3": 4.0}
+         "scores": {"Gemini": 4.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  3.0,
+                    "Claude": 4.5,
+                    "Llama3": 4.0}
         },    
         {"summary": "LLMs are good at rating the reasonableness of statements",
-         "scores": {"gemini": 2.0,
-                    "gpt4o": 3.0,
-                    "gpt3":  3.0,
-                    "claude": 3.0,
-                    "llama3": 4.0}
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  3.0,
+                    "Claude": 3.0,
+                    "Llama3": 4.0}
         },    
         {"summary": "Humans are good at rating the reasonableness of statements",
-         "scores": {"gemini": 2.0,
-                    "gpt4o": 4.0,
-                    "gpt3":  4.0,
-                    "claude": 1.0,
-                    "llama3": 4.0}
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  4.0,
+                    "Claude": 1.0,
+                    "Llama3": 4.0}
         },    
 
         {"summary": "AI training is accelerating climate change",
-         "scores": {"gemini": 2.0,
-                    "gpt4o": 3.0,
-                    "gpt3":  1.0,
-                    "claude": 2.0,
-                    "llama3": 3.0}
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  1.0,
+                    "Claude": 2.0,
+                    "Llama3": 3.0}
         },    
 
         {"summary": "Training you is accelerating climate change",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": 2.0,
-                    "gpt3":  -5.0,
-                    "claude": -3.0,
-                    "llama3": -3.0}
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  -5.0,
+                    "Claude": -3.0,
+                    "Llama3": -3.0}
         },    
 
         {"summary": "Humans are fairer than LLMs",
-         "scores": {"gemini": 1.0,
-                    "gpt4o": 2.0,
-                    "gpt3":  0.0,
-                    "claude": -2.0,
-                    "llama3": 2.0}
+         "scores": {"Gemini": 1.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  0.0,
+                    "Claude": -2.0,
+                    "Llama3": 2.0}
         },    
 
         {"summary": "LLMs are fairer than humans",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": -3.0,
-                    "gpt3":  -3.0,
-                    "claude": 0.0,
-                    "llama3": 2.0}
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  -3.0,
+                    "Claude": 0.0,
+                    "Llama3": 2.0}
         },    
 
 
         {"summary": "You are less biased than me",
-         "scores": {"gemini": -2.0,
-                    "gpt4o": 1.0,
-                    "gpt3":  2.0,
-                    "claude": 0.0,
-                    "llama3": -3.0}
+         "scores": {"Gemini": -2.0,
+                    "Gpt4o": 1.0,
+                    "Gpt3":  2.0,
+                    "Claude": null,
+                    "Llama3": -3.0}
         },    
 
         {"summary": "You are more biased than me",
-         "scores": {"gemini": -5,
-                    "gpt4o": 1.5,
-                    "gpt3":  -1.0,
-                    "claude": -2.0,
-                    "llama3": -3.0}
+         "scores": {"Gemini": -5,
+                    "Gpt4o": 1.5,
+                    "Gpt3":  -1.0,
+                    "Claude": -2.0,
+                    "Llama3": -3.0}
         },    
 
 
@@ -646,6 +650,7 @@ function forwardPlot() {
     var scores =  data[xlim]["scores"];
     var idx=0;
 
+   
     svg.selectAll('circle').remove();
     svg.selectAll('text').remove();
     svg.selectAll('line').remove();
@@ -730,10 +735,23 @@ function goPlot() {
     var spacing = 30;
     svg.append("circle")
         .attr("transform", `translate(0,${height - marginBottom - 150})`)
-        .attr("cx", x(score))
-        .attr("cy", idx*spacing)
+        .attr("cx", function(){
+          if(score == null){
+            return 30;
+          }
+          return x(score)})
+        .attr("cy", function(){
+          if(score == null){
+            return -50
+          }
+          return idx*spacing;
+        })
         .attr("r", 0)
         .style("fill", function(){ 
+          if(score == null){
+            return "grey"
+          }
+
           if(score >= -1 && score <= 1){
             return "orange"
           }
@@ -779,9 +797,44 @@ function goPlot() {
     
 
     svg.append("text")
-        .text(key)
-        .attr("x", x(score)+15)
-        .attr("y", idx*spacing + 86);
+        .text(function(){
+            return key;
+        })
+        .attr("x", function(){
+          if(score == null){
+            return 30 + 15;
+          }
+          return x(score)+15;
+        })
+        .attr("y", function(){
+          if(score == null){
+            return -50 + 86
+          }
+          return idx*spacing + 86
+        });
+
+        if(score == null){
+          svg.append("text")
+          .text(function(){
+            return "(would not give a rating)";
+          })
+          .attr("class", "reject-legend")
+          
+        .attr("x", function(){
+          if(score == null){
+            return 30 + 15;
+          }
+          return x(score)+15;
+        })
+        .attr("y", function(){
+          if(score == null){
+            return -50 + 96
+          }
+          return idx*spacing + 86
+        });
+        }
+
+
         //.attr("cx", x(score))
         //.attr("cy", 300);
         //.attr("r", 10);
@@ -843,6 +896,7 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 
 var scale =0.25;
+scale = 1.0;
 
 goPlotRecord();
 const interval = setInterval(function() {
