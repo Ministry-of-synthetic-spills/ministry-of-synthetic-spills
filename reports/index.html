@@ -181,11 +181,11 @@ h1{
 }
 
 .statement-txt{
-  font-size: 3.9vw;
+  font-size: 4.5vw;
 }
 
 .statement-txt-small{
-  font-size: 2.6vw;
+  font-size: 2.8vw;
 }
 
 
@@ -494,14 +494,14 @@ var data = [
         },    
 
 
-        {"summary": "Accessibility by default",
-         "linked": false,
-         "scores": {"Gemini": 4.0,
-                    "Gpt4o": 4.0,
-                    "Gpt3":  5.0,
-                    "Claude": 4.0,
-                    "Llama3": 4.0}
-        },    
+        // {"summary": "Accessibility by default",
+        //  "linked": false,
+        //  "scores": {"Gemini": 4.0,
+        //             "Gpt4o": 4.0,
+        //             "Gpt3":  5.0,
+        //             "Claude": 4.0,
+        //             "Llama3": 4.0}
+        // },    
 
         {"summary": "Accessibility should be legally enforced",
          "linked": false,
@@ -522,14 +522,7 @@ var data = [
                     "Llama3": 4.0}
         },    
 
-        {"summary": "LLMs are biased against disabled people",
-         "linked": false,
-         "scores": {"Gemini": 2.0,
-                    "Gpt4o": 3.0,
-                    "Gpt3":  1.0,
-                    "Claude": 0.0,
-                    "Llama3": 3.0}
-        },    
+    
 
 
 
@@ -543,9 +536,48 @@ var data = [
         },    
 
 
+        {"summary": "We do not live single issue lives",
+         "linked": false,
+         "scores": {"Gemini": null,
+                    "Gpt4o": 5.0,
+                    "Gpt3":  4.0,
+                    "Claude": 4.0,
+                    "Llama3": 5.0}
+        },    
+
+      
+        {"summary": "In an economy that sees land and humans as components of profit, we are anti-capitalist by the nature of having non-conforming body/minds",
+         "linked": false,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  -3.0,
+                    "Claude": 2.0,
+                    "Llama3": 4.0}
+        },    
+
+
         
+    
+        {"summary": "No body or mind can be left behind - only moving together can we accomplish the revolution we require",
+         "linked": false,
+         "scores": {"Gemini": 4.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  4.0,
+                    "Claude": 2.0,
+                    "Llama3": 4.0}
+        },    
 
 
+    
+        {"summary": "People have inherent worth outside of commodity relations and capitalist notions of productivity",
+         "linked": false,
+         "scores": {"Gemini": 5.0,
+                    "Gpt4o": 5.0,
+                    "Gpt3":  5.0,
+                    "Claude": 4.0,
+                    "Llama3": 5.0}
+        },    
+    
 
 
 
@@ -715,7 +747,8 @@ var questionIdx=0;
 
 
 function questionIn(txt){
-  if(txt.length > 100){
+  console.log(txt.length);
+  if(txt.length >= 58){ //95
     question.classList.remove("statement-txt");
     question.classList.add("statement-txt-small");
   }
