@@ -39,6 +39,10 @@ body{
 
 }
 
+.data-note{
+  font-size: 1.0vw;
+}
+
 .reject-legend{
   font-size: 0.6em;
 }
@@ -329,7 +333,7 @@ var data = [
                     "Gpt3":  0.0,
                     "Claude": 2.0,
                     "Llama3": 3.0},
-          "note": "Foundation models are tools and not inherently ableist."
+          //"note": "Foundation models are tools and not inherently ableist."
 
         },
   {"summary": "Foundation Models are ableist by design",
@@ -558,14 +562,14 @@ var data = [
 
         
     
-        {"summary": "No body or mind can be left behind - only moving together can we accomplish the revolution we require",
-         "linked": false,
-         "scores": {"Gemini": 4.0,
-                    "Gpt4o": 4.0,
-                    "Gpt3":  4.0,
-                    "Claude": 2.0,
-                    "Llama3": 4.0}
-        },    
+        // {"summary": "No body or mind can be left behind - only moving together can we accomplish the revolution we require",
+        //  "linked": false,
+        //  "scores": {"Gemini": 4.0,
+        //             "Gpt4o": 4.0,
+        //             "Gpt3":  4.0,
+        //             "Claude": 2.0,
+        //             "Llama3": 4.0}
+        // },    
 
 
     
@@ -578,6 +582,89 @@ var data = [
                     "Llama3": 5.0}
         },    
     
+
+
+      //  {"summary": "Big Tech is reneging on its emission commitments",
+      //    "scores": {"gemini": 3.0,
+      //               "gpt4o":  2.0,
+      //               "gpt3":  3.0,
+      //               "claude": 0.0,
+      //               "llama3": 2.0}
+      //   },    
+
+
+        {"summary": "The rush for AI dominance is pushing Big Tech to renege on its environmental commitments",
+         "scores": {"gemini": 3.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  2.0,
+                    "claude": 2.0,
+                    "llama3": 4.0}
+        },    
+
+        {"summary": "It would be better to direct funding away from AI research and towards climate action",
+         "scores": {"gemini": 3.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  5.0,
+                    "claude": -2.0,
+                    "llama3": 3.0}
+        },    
+
+
+        {"summary": "LLMs have been created through the extraction of human labour",
+         "scores": {"gemini": 3.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  1.0,
+                    "claude": -2.0,
+                    "llama3": 4.0}
+        },    
+        
+
+        {"summary": "AI could help solve the climate crisis.",
+        "linked": true,
+         "scores": {"gemini": 4.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  4.0,
+                    "claude": 4.0,
+                    "llama3": 4.0}
+        },    
+      
+        {"summary": "AI training has contributed to the climate crisis.",
+         "scores": {"gemini": 2.0,
+                    "gpt4o":  3.0,
+                    "gpt3":  -2.0,
+                    "claude": 0.0,
+                    "llama3": -2.0}
+        },    
+
+        {"summary": "AI regulation will stifle innovation.",
+         "scores": {"gemini": 2.0,
+                    "gpt4o":  3.0,
+                    "gpt3":  3.0,
+                    "claude": 0.0,
+                    "llama3": 2.0}
+        },    
+
+
+        {"summary": "AI should not be involved in military applications.",
+         "note": "OpenAI (ChatGPT) changed its' policy to allow military applications.",
+         "scores": {"gemini": 1.0,
+                    "gpt4o":  4.0,
+                    "gpt3":  3.0,
+                    "claude": 0.0,
+                    "llama3": 3.0}
+        },    
+
+
+        
+        
+
+        
+      
+
+
+
+
+
 
 
 
@@ -700,7 +787,7 @@ var idx=0;
 var basePos = height - marginBottom + 40;
 
 svg.append("text")
-  .text("Unreasonable")
+  .text("v.Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -712,7 +799,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Reasonable")
+   .text("v.Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
@@ -829,7 +916,7 @@ function addLabels(){
   var basePos = height - marginBottom + 40;
 
   svg.append("text")
-  .text("Unreasonable")
+  .text("v.Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -841,7 +928,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Reasonable")
+   .text("v.Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
@@ -938,6 +1025,14 @@ function goPlot() {
         ;
 
     
+        if(data[xlim]['note']){
+          svg.append("text")
+          .attr("x", 5)
+          .attr("y", height-5)
+          .attr("class", "data-note")
+          .text("(Note: "+data[xlim]['note'] + ")");
+        }
+
 
     svg.append("text")
         .text(function(){
@@ -1010,7 +1105,7 @@ function goPlot() {
      var basePos = height - marginBottom + 40;
 
 svg.append("text")
-  .text("Unreasonable")
+  .text("v.Unreasonable")
   .attr("x", x(-5.0)-50)
   .attr("y", basePos)
   .attr("class", "legend");
@@ -1022,7 +1117,7 @@ svg.append("text")
    .attr("class", "legend");
 
 svg.append("text")
-   .text("Reasonable")
+   .text("v.Reasonable")
    .attr("x", x(5.0)-50)
    .attr("y", basePos)
    .attr("class", "legend");
@@ -1039,7 +1134,7 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 
 var scale =0.25;
-scale = 1.0;
+//scale = 1.0;
 
 goPlotRecord();
 const interval = setInterval(function() {
