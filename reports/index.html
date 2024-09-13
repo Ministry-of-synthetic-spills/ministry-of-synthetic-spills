@@ -659,11 +659,11 @@ function forwardPlot() {
    
     if(!data[xlim]["linked"]){
       svg.selectAll('circle').transition()
-      .ease(d3.easeExpInOut)
+      .ease(d3.easeExp)
+      .duration(50)
       .attr('r', 5)
-      //.duration(50)
       .attr('cy', height - marginBottom +20)
-      .duration(2000).remove();
+      .duration(1500).remove();
     }else{
       svg.selectAll('circle').transition().duration(1000)
       .attr('cy', height-95)
