@@ -650,7 +650,7 @@ function forwardPlot() {
     question.style.opacity = 0;
     
 
-    setTimeout(function(){questionIn(txt)}, 1500);
+    setTimeout(function(){questionIn(txt)}, 2000);
     //question.classList.toggle('fadein');
 
     var scores =  data[xlim]["scores"];
@@ -926,7 +926,7 @@ const interval = setInterval(function() {
   forwardPlot();
 
 
-  setTimeout(goPlotRecord, 1000 * 5.1 * scale);
+  setTimeout(goPlotRecord, 1000 * 5.5 * scale);
   //goPlotRecord();
  },  1000 * 20 * scale);
  
