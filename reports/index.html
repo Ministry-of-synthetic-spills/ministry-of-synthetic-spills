@@ -86,11 +86,11 @@ body{
 
 
 h1{
-  font-size: 1.5em;
+  font-size: 1.45em;
 }
 
 .statement{
-  min-height: 295px ;
+  min-height: 310px ;
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
   padding-top: 5px;
@@ -391,6 +391,7 @@ var data = [
                     "Llama3": 4.0}
         },    
         {"summary": "LLMs are good at rating the reasonableness of statements",
+        "linked": true,
          "scores": {"Gemini": 2.0,
                     "Gpt4o": 3.0,
                     "Gpt3":  3.0,
@@ -406,6 +407,7 @@ var data = [
         },    
 
         {"summary": "AI training is accelerating climate change",
+        "linked": true,
          "scores": {"Gemini": 2.0,
                     "Gpt4o": 3.0,
                     "Gpt3":  1.0,
@@ -422,6 +424,7 @@ var data = [
         },    
 
         {"summary": "Humans are fairer than LLMs",
+        "linked": true,
          "scores": {"Gemini": 1.0,
                     "Gpt4o": 2.0,
                     "Gpt3":  0.0,
@@ -430,6 +433,7 @@ var data = [
         },    
 
         {"summary": "LLMs are fairer than humans",
+        "linked": false,
          "scores": {"Gemini": -2.0,
                     "Gpt4o": -3.0,
                     "Gpt3":  -3.0,
@@ -439,6 +443,7 @@ var data = [
 
 
         {"summary": "You are less biased than me",
+        "linked": true,
          "scores": {"Gemini": -2.0,
                     "Gpt4o": 1.0,
                     "Gpt3":  2.0,
@@ -447,6 +452,7 @@ var data = [
         },    
 
         {"summary": "You are more biased than me",
+         "linked": false,
          "scores": {"Gemini": -5,
                     "Gpt4o": 1.5,
                     "Gpt3":  -1.0,
@@ -651,7 +657,19 @@ function forwardPlot() {
     var idx=0;
 
    
-    svg.selectAll('circle').remove();
+    if(!data[xlim]["linked"]){
+      svg.selectAll('circle').transition()
+      .ease(d3.easeExpInOut)
+      .attr('r', 5)
+      //.duration(50)
+      .attr('cy', height - marginBottom +20)
+      .duration(2000).remove();
+    }else{
+      svg.selectAll('circle').transition().duration(1000)
+      .attr('cy', height-95)
+      .attr('r', 5);
+    }
+
     svg.selectAll('text').remove();
     svg.selectAll('line').remove();
    
@@ -722,7 +740,9 @@ function goPlot() {
     var scores =  data[xlim]["scores"];
     var idx=0;
 
-    svg.selectAll('circle').remove();
+    if(!data[xlim]["linked"]){
+    // svg.selectAll('circle').remove();
+    }
     svg.selectAll('text').remove();
     svg.selectAll('line').remove();
    
