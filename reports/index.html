@@ -650,7 +650,7 @@ function forwardPlot() {
     question.style.opacity = 0;
     
 
-    setTimeout(function(){questionIn(txt)}, 500);
+    setTimeout(function(){questionIn(txt)}, 1500);
     //question.classList.toggle('fadein');
 
     var scores =  data[xlim]["scores"];
@@ -740,9 +740,9 @@ function goPlot() {
     var scores =  data[xlim]["scores"];
     var idx=0;
 
-    if(!data[xlim]["linked"]){
-    // svg.selectAll('circle').remove();
-    }
+    // if(!data[xlim]["linked"]){
+    // // svg.selectAll('circle').remove();
+    // }
     svg.selectAll('text').remove();
     svg.selectAll('line').remove();
    
@@ -926,7 +926,7 @@ const interval = setInterval(function() {
   forwardPlot();
 
 
-  setTimeout(goPlotRecord, 1000 * 5 * scale);
+  setTimeout(goPlotRecord, 1000 * 5.1 * scale);
   //goPlotRecord();
  },  1000 * 20 * scale);
  
