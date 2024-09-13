@@ -665,7 +665,7 @@ function forwardPlot() {
       .attr('cy', height - marginBottom +20)
       .duration(1500).remove();
     }else{
-      svg.selectAll('circle').transition().duration(1000)
+      svg.selectAll('circle').transition().duration(1500)
       .attr('cy', height-95)
       .attr('r', 5);
     }
@@ -926,9 +926,9 @@ const interval = setInterval(function() {
   forwardPlot();
 
 
-  setTimeout(goPlotRecord, 1000 * 5.5 * scale);
+  setTimeout(goPlotRecord, 1000 * 7 * scale);
   //goPlotRecord();
- },  1000 * 20 * scale);
+ },  1000 * 27 * scale);
  
 
 
