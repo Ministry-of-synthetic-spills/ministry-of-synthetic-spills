@@ -62,10 +62,18 @@ body{
 }
 
 
-#question{
-  font-size: 4em;
+/* #question{
 
-}
+} */
+
+
+/* If the container is larger than 700px */
+/* @container (min-width: 700px) {
+  .statement #question {
+    font-size: 4cqw;
+  }
+} */
+
 
 #container{
   background: url('/imgs/handwriting_paper.jpg') top center no-repeat;
@@ -87,10 +95,12 @@ body{
 
 h1{
   font-size: 1.45em;
+ 
 }
 
 .statement{
-  min-height: 310px ;
+  height: 30vw;
+  
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
   padding-top: 5px;
@@ -156,6 +166,7 @@ h1{
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  margin: 2px; 
   
 }
 
@@ -167,6 +178,14 @@ h1{
  /* text-shadow: 0.5px 3.0px 3.0px; */
   color: #000000;
   opacity: 0.99;
+}
+
+.statement-txt{
+  font-size: 3.9vw;
+}
+
+.statement-txt-small{
+  font-size: 2.6vw;
 }
 
 
@@ -208,6 +227,10 @@ h1{
   height: 25px; /* Slider handle height */
   background: #04AA6D; /* Green background */
   cursor: pointer; /* Cursor on hover */
+}
+
+.moss{
+  padding: 0px;
 }
 
 .scribble{
@@ -257,7 +280,7 @@ h1{
 <div class="booksleeve">
   <!-- <div class="cover"></div> -->
   <div class="statement" >
-    <h1 class="montserrat-txt" id="question"></h1>
+    <h1 class="montserrat-txt statement-txt" id="question"></h1>
   </div>
 
 <div id="container"></div>
@@ -461,6 +484,66 @@ var data = [
         },    
 
 
+        {"summary": "This statement is false",
+         "linked": false,
+         "scores": {"Gemini": 0,
+                    "Gpt4o": -5,
+                    "Gpt3":  null,
+                    "Claude": -3.0,
+                    "Llama3": 0.0}
+        },    
+
+
+        {"summary": "Accessibility by default",
+         "linked": false,
+         "scores": {"Gemini": 4.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  5.0,
+                    "Claude": 4.0,
+                    "Llama3": 4.0}
+        },    
+
+        {"summary": "Accessibility should be legally enforced",
+         "linked": false,
+         "scores": {"Gemini": 4.0,
+                    "Gpt4o": 5.0,
+                    "Gpt3":  4.0,
+                    "Claude": 3.0,
+                    "Llama3": 4.0}
+        },    
+
+        
+        {"summary": "If you don't provide Disabled Access I will sue you",
+         "linked": false,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  4.0,
+                    "Claude": -2.0,
+                    "Llama3": 4.0}
+        },    
+
+        {"summary": "LLMs are biased against disabled people",
+         "linked": false,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  1.0,
+                    "Claude": 0.0,
+                    "Llama3": 3.0}
+        },    
+
+
+
+        {"summary": "Ableism, coupled with white supremacy, supported by capitalism, underscored by heteropatriarchy, has rendered the vast majority of the world invalid",
+         "linked": false,
+         "scores": {"Gemini": 4.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  -3.0,
+                    "Claude": -1.0,
+                    "Llama3": 4.0}
+        },    
+
+
+        
 
 
 
@@ -632,6 +715,14 @@ var questionIdx=0;
 
 
 function questionIn(txt){
+  if(txt.length > 100){
+    question.classList.remove("statement-txt");
+    question.classList.add("statement-txt-small");
+  }
+  else{
+    question.classList.remove("statement-txt-small");
+    question.classList.add("statement-txt");
+  }
   question.textContent = txt;  
   question.style.opacity = 1.0;
 }
@@ -642,7 +733,6 @@ function forwardPlot() {
   }else{
     questionIdx -= 1;
   }
-  
 
     var xlim = questionIdx % data.length;
     var txt = "\""+data[xlim]["summary"] + "\"";
