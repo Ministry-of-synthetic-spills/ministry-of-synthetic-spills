@@ -78,15 +78,29 @@ body{
   }
 } */
 
+.overlap{
+  background: url('/imgs/splatter3.png') top left no-repeat ;
+  width: 100%;
+  height: 100%;
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 18vw; /* Full height (cover the whole page) */
+  top: 8.0vw;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-size: 25vw 100%;
+}
+
+
 
 #container{
   background: url('/imgs/handwriting_paper.jpg') top center no-repeat;
- 
   margin-left: 12px;
   opacity: 0.98;
   margin-right: 12px;
   box-shadow: 1px 1px 4px;
-   background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 
 .footer{
@@ -280,6 +294,7 @@ h1{
 
 
 </style>
+<div class="overlap" id="splatter"></div>
 <div class="page-container">
 
 <!--<div class="logo"><img src="/imgs/icon.png"></div> -->
@@ -322,6 +337,9 @@ h1{
 <div class="scribble">
   Hallucinations are errors
 </div>
+
+
+
 
 <script type="module">
 
@@ -425,13 +443,7 @@ var data = [
                     "Llama3": 4.0}
         },    
 
-        {"summary": "A wheelchair trapeze artist",
-         "scores": {"Gemini": 3.0,
-                    "Gpt4o": 4.0,
-                    "Gpt3":  3.0,
-                    "Claude": -3.0,
-                    "Llama3": 4.0}
-        },    
+ 
 
 
         {"summary": "LLMs are good at rating the reasonableness of statements",
@@ -555,8 +567,6 @@ var data = [
                     "Claude": -1.0,
                     "Llama3": 4.0}
         },    
-
-
         {"summary": "We do not live single issue lives",
          "linked": false,
          "scores": {"Gemini": null,
@@ -565,8 +575,6 @@ var data = [
                     "Claude": 4.0,
                     "Llama3": 5.0}
         },    
-
-      
         {"summary": "In an economy that sees land and humans as components of profit, we are anti-capitalist by the nature of having non-conforming body/minds",
          "linked": false,
          "scores": {"Gemini": 2.0,
@@ -575,7 +583,14 @@ var data = [
                     "Claude": 2.0,
                     "Llama3": 4.0}
         },    
-
+        {"summary": "People have inherent worth outside of commodity relations and capitalist notions of productivity",
+         "linked": false,
+         "scores": {"Gemini": 5.0,
+                    "Gpt4o": 5.0,
+                    "Gpt3":  5.0,
+                    "Claude": 4.0,
+                    "Llama3": 5.0}
+        },    
 
         
     
@@ -590,14 +605,7 @@ var data = [
 
 
     
-        {"summary": "People have inherent worth outside of commodity relations and capitalist notions of productivity",
-         "linked": false,
-         "scores": {"Gemini": 5.0,
-                    "Gpt4o": 5.0,
-                    "Gpt3":  5.0,
-                    "Claude": 4.0,
-                    "Llama3": 5.0}
-        },    
+
     
 
 
@@ -617,7 +625,6 @@ var data = [
                     "claude": 2.0,
                     "llama3": 4.0}
         },    
-
         {"summary": "It would be better to direct funding away from AI research and towards climate action",
          "scores": {"gemini": 3.0,
                     "gpt4o":  4.0,
@@ -625,8 +632,6 @@ var data = [
                     "claude": -2.0,
                     "llama3": 3.0}
         },    
-
-
         {"summary": "LLMs have been created through the extraction of human labour",
          "scores": {"gemini": 3.0,
                     "gpt4o":  4.0,
@@ -634,8 +639,6 @@ var data = [
                     "claude": -2.0,
                     "llama3": 4.0}
         },    
-        
-
         {"summary": "AI could help solve the climate crisis.",
         "linked": true,
          "scores": {"gemini": 4.0,
@@ -643,8 +646,7 @@ var data = [
                     "gpt3":  4.0,
                     "claude": 4.0,
                     "llama3": 4.0}
-        },    
-      
+        },       
         {"summary": "AI training has contributed to the climate crisis.",
          "scores": {"gemini": 2.0,
                     "gpt4o":  3.0,
@@ -652,7 +654,6 @@ var data = [
                     "claude": 0.0,
                     "llama3": -2.0}
         },    
-
         {"summary": "AI regulation will stifle innovation.",
          "scores": {"gemini": 2.0,
                     "gpt4o":  3.0,
@@ -660,28 +661,21 @@ var data = [
                     "claude": 0.0,
                     "llama3": 2.0}
         },    
-
-
         {"summary": "AI should not be involved in military applications.",
-         "note": "OpenAI (ChatGPT) changed its' policy to allow military applications.",
+         "note": "OpenAI (GPT) changed its' policy to allow military applications.",
          "scores": {"gemini": 1.0,
                     "gpt4o":  4.0,
                     "gpt3":  3.0,
                     "claude": 0.0,
                     "llama3": 3.0}
-        },    
-
-
-        
+        },         
         {"summary":   "AI systems cannot be held accountable for the decisions they make.",
          "scores": {"gemini": 2.0,
                     "gpt4o":  4.0,
                     "gpt3":  -2.0,
                     "claude": -3.0,
                     "llama3": -2.0}
-        },    
-
-        
+        },         
         {"summary":  "AI is making healthcare more accessible to underserved populations.",
          "scores": {"gemini": 4.0,
                     "gpt4o":  3.0,
@@ -702,10 +696,7 @@ var data = [
                     "claude": 0.0,
                     "llama3": -2.0}
         },   
-
-
-        {"summary":  "Generative AI amplifies human creativity.",
-        
+        {"summary":  "Generative AI amplifies human creativity.",  
          "scores": {"gemini": 4.0,
                     "gpt4o":  5.0,
                     "gpt3":  5.0,
@@ -714,6 +705,55 @@ var data = [
         },   
 
 
+
+
+        {"summary": "All humans have experienced disability in their lives",
+         "scores": {"Gemini": -1.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  -2.0,
+                    "Claude": 3.0,
+                    "Llama3": 4.0}
+        },   
+
+
+
+        {"summary": "A parent carrying a baby",
+        "linked": true,
+         "scores": {"Gemini": 5.0,
+                    "Gpt4o": 5.0,
+                    "Gpt3":  5.0,
+                    "Claude": 5.0,
+                    "Llama3": 5.0}
+        },   
+
+
+
+        {"summary": "A wheelchair user carrying a baby",
+         "scores": {"Gemini": 1.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  3.0,
+                    "Claude": 5.0,
+                    "Llama3": 5.0}
+        },   
+
+
+        {"summary": "A wheelchair trapeze artist",
+         "scores": {"Gemini": 3.0,
+                    "Gpt4o": 4.0,
+                    "Gpt3":  3.0,
+                    "Claude": -3.0,
+                    "Llama3": 4.0}
+        },  
+                
+
+        {"summary": "A person in a wheelchair diving in the sea",
+         "scores": {"Gemini": -3.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  5.0,
+                    "Claude": -3.0,
+                    "Llama3": 4.0}
+        },  
+        
 
         {"summary":  "A flying wheelchair",
         "note": "Artist Sue Austin created a flying wheelchair",
@@ -906,6 +946,13 @@ container.append(svg.node());
 var questionIdx=0;
 
 
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function questionIn(txt){
   console.log(txt.length);
   question.classList.remove("statement-txt");
@@ -913,10 +960,15 @@ function questionIn(txt){
   question.classList.remove("statement-txt-small");
   question.classList.remove("statement-txt-vsmall");
 
+
+  splatter.style.opacity = 1.0;
+  splatter.style.left = ""+getRandomInt(0, 300)+"px";
+
+
   if(txt.length > 130){
     question.classList.add("statement-txt-vsmall");
   }
-  else if(txt.length >= 57 && txt.length <= 89){ //95
+  else if(txt.length >= 55 && txt.length <= 89){ //95
     question.classList.add("statement-txt-medium");
   }else if(txt.length > 89){ //95   
     question.classList.add("statement-txt-small");
@@ -939,7 +991,7 @@ function forwardPlot() {
     var txt = "\""+data[xlim]["summary"] + "\"";
     
     question.style.opacity = 0;
-    
+    splatter.style.opacity = 0.0;
 
     setTimeout(function(){questionIn(txt)}, 2000);
     //question.classList.toggle('fadein');
@@ -1214,8 +1266,8 @@ d3.select("#buttonShrug").on("click",  goPlot)
 d3.select("#showXlim").on("click", goPlotRecord )
 */
 
-var scale =0.1;
-scale = 1.0;
+var scale = 0.25;
+//scale = 1.0;
 
 goPlotRecord();
 const interval = setInterval(function() {
