@@ -861,7 +861,7 @@ const width = 1000;
 const height = 300;
 const marginTop = 20;
 const marginRight = 100;
-const marginBottom = 70;
+const marginBottom = 75;
 const marginLeft = 100;
 
 // Declare the x (horizontal position) scale.
@@ -983,7 +983,7 @@ svg.append("text")
 // Append the SVG element.
 container.append(svg.node());
 
-var questionIdx=0;
+//var questionIdx=0;
 
 
 
@@ -1203,7 +1203,7 @@ function goPlot() {
        // .style("fill", "url(#radial-gradient)")
         ;
 
-        var newY =  (height - marginBottom - 90)  ;
+        var newY =  (height - marginBottom - 90 + 5)  ;
 
 
     svg.append("line")
