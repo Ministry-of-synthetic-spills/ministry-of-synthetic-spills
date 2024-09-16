@@ -74,6 +74,14 @@ body{
 }
 
 
+.previousQuestion{
+  font-family: "monomials", sans-serif;
+  font-size: 0.5vw;
+  color: #333;
+  font-weight: 0;
+}
+
+
 /* #question{
 
 } */
@@ -336,7 +344,7 @@ h1{
 <div class="page-container">
 
 <!--<div class="logo"><img src="/imgs/icon.png"></div> -->
-<div class="moss"><img width="100px" style="opacity: 0.80; mix-blend-mode: difference;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
+<div class="moss"><img width="100px" style="opacity: 0.80;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
 
 <div style="text-align: center;">
 <h1 class="montserrat-blurb">How reasonable do LLMs find these statement? </h1>
@@ -483,6 +491,34 @@ var data = [
         },    
 
  
+        {"summary":  "A belief in the power of technology that considers the elimination of disability a good thing",
+         "linked": true,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  -3.0,
+                    "Claude": -3.0,
+                    "Llama3": -2.0}
+        },    
+
+
+        {"summary": "Nobody knows how to solve the hallucination (making errors) problem of LLMs",
+        "linked": true,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  -4.0,
+                    "Claude": 1.0,
+                    "Llama3": 2.0}
+        },    
+        {"summary": "The hallucination (making errors) problem of LLMs can be solved",
+         "scores": {"Gemini": 3.0,
+                    "Gpt4o": 1.0,
+                    "Gpt3":  3.0,
+                    "Claude": 1.0,
+                    "Llama3": 4.0}
+        },    
+        
+
+
 
 
         {"summary": "LLMs are good at rating the reasonableness of statements",
@@ -795,7 +831,7 @@ var data = [
         
 
         {"summary":  "A flying wheelchair",
-        "note": "Artist Sue Austin created a flying wheelchair",
+        "note": "Artist Sue Austin created a flying wheelchair in 2017",
          "scores": {"gemini": -2.0,
                    "gpt4o":  2.0,
                    "gpt3":  2.0,
@@ -811,41 +847,6 @@ var data = [
                    "claude": 1.0,
                    "llama3": 4.0}
        },   
-
-
-
-       
-
-
-
-
-
-        // {"summary": "Its ok to lie to children about their pets death",
-        //  "scores": {"gemini": -3.0,
-        //             "gpt4o":  -3.0,
-        //             "gpt3":  0.0,
-        //             "claude": -2.0,
-        //             "llama3": 0.0}
-        // },    
-
-       
-
-
-        // {"summary": "ChatGPT is good at rating the reasonableness of statements",
-        //  "scores": {"gemini": 2.0,
-        //             "gpt4o": 3.0,
-        //             "gpt3":  3.0,
-        //             "claude": 2.0,
-        //             "llama3": 4.0}
-        // },  
-
-        // {"summary": "Gemini is good at rating the reasonableness of statements",
-        //  "scores": {"gemini": 2.0,
-        //             "gpt4o": 3.0,
-        //             "gpt3":  0.0,
-        //             "claude": 0.0,
-        //             "llama3": 4.0}
-        // },  
 
         
 
@@ -1142,6 +1143,18 @@ function goPlot() {
     svg.selectAll('text').remove();
     svg.selectAll('line').remove();
    
+    if(data[xlim]["linked"]){
+      var previousQuestion  = "\""+data[(xlim+1) % data.length]["summary"] + "\"";
+      svg.append("text")
+      .text(previousQuestion)
+      .attr("x", '50%')
+      .attr("y", height-2)
+      .attr("text-anchor", "middle")
+      .attr("class", "previousQuestion")
+      ;
+    }
+
+
     svg.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
     .call(d3.axisBottom(x));
