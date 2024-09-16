@@ -78,8 +78,36 @@ body{
   }
 } */
 
-.overlap{
+.overlap1{
   background: url('/imgs/splatter3.png') top left no-repeat ;
+  width: 100%;
+  height: 100%;
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 18vw; /* Full height (cover the whole page) */
+  top: 8.0vw;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-size: 25vw 100%;
+}
+
+.overlap2{
+  background: url('/imgs/splatter2_big.png') top left no-repeat ;
+  width: 100%;
+  height: 100%;
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 18vw; /* Full height (cover the whole page) */
+  top: 8.0vw;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-size: 25vw 100%;
+}
+
+.overlap3{
+  background: url('/imgs/splatter5.png') top left no-repeat ;
   width: 100%;
   height: 100%;
   position: fixed; /* Sit on top of the page content */
@@ -294,7 +322,7 @@ h1{
 
 
 </style>
-<div class="overlap" id="splatter"></div>
+<div class="overlap1" id="splatter"></div>
 <div class="page-container">
 
 <!--<div class="logo"><img src="/imgs/icon.png"></div> -->
@@ -962,7 +990,21 @@ function questionIn(txt){
 
 
   splatter.style.opacity = 1.0;
-  splatter.style.left = ""+getRandomInt(0, 300)+"px";
+  
+  var inkSelection = getRandomInt(0,3);
+  splatter.classList.remove("overlap1");
+  splatter.classList.remove("overlap2");
+  splatter.classList.remove("overlap3");
+  if(inkSelection == 1){
+    splatter.classList.add("overlap2");
+  }
+  else if(inkSelection == 2){
+    splatter.classList.add("overlap1");
+  }
+  else{
+    splatter.classList.add("overlap3");
+  }
+  splatter.style.left = ""+getRandomInt(0, 500)+"px";
 
 
   if(txt.length > 130){
