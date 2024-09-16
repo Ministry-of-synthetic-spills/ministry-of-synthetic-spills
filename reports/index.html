@@ -123,7 +123,7 @@ h1{
 }
 
 .statement{
-  height: 43vh;
+  height: 42vh;
   
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
@@ -270,7 +270,7 @@ h1{
   font-family: "Odachi";
   opacity: 0.5;
   margin-left: 40px;
-  margin-top: 50px;
+  margin-top: 12px;
   float: left;
   opacity: 0.5;
   rotate: 10deg;
@@ -283,6 +283,14 @@ h1{
   height: 400px;
   top: 0;
   left: 0;
+}
+
+.ministry{
+  width: 200px;
+  opacity: 0.90;
+  position: relative;
+
+
 }
 
 @font-face {
@@ -304,7 +312,7 @@ h1{
 
 <div class="overlap1" id="splatter"></div>
 <div class="page-container">
-<div class="moss"><img width="100px" style="opacity: 0.80;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
+<div class="moss"><img class="ministry" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
 
 <div style="text-align: center;">
   <h1 class="montserrat-blurb">How reasonable do LLMs find these statement? </h1>
@@ -804,7 +812,7 @@ console.log(user_guesses);
 
 // Declare the chart dimensions and margins.
 const width = 1000;
-const height = 258;
+const height = 250;
 const marginTop = 20;
 const marginRight = 100;
 const marginBottom = 73;
@@ -819,7 +827,7 @@ const x = d3.scaleLinear()
 const svg = d3.create("svg")
    // .attr("width", '990px')
    // .attr("height", height)
-    .attr("viewBox", "0 0 1000 258")
+    .attr("viewBox", "0 0 1000 250")
     .attr("preserveAspectRatio", "xMidYMid meet")
     ;
 
@@ -967,11 +975,11 @@ function forwardPlot() {
       .ease(d3.easeExp)
       .duration(50)
       .attr('r', 5)
-      .attr('cy', height - marginBottom + 50 )
+      .attr('cy', height - 15  )
       .duration(1500).remove();
     }else{
       svg.selectAll('circle').transition().duration(1500)
-      .attr('cy', height- marginBottom  + 15)
+      .attr('cy', height  - 50)
       .attr('r', 4);
     }
 
@@ -1112,7 +1120,7 @@ function goPlot() {
         ;
 
 
-        var offsetHack = 43;
+        var offsetHack = 37;
 
         var newY =  (height - marginBottom -  offsetHack)  ;
 
