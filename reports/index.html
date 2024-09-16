@@ -10,23 +10,6 @@
   background-size: 55% 55%;
 }
 
-
-/*
-.booksleeve{
-  background: url('/imgs/cover.jpg') center top no-repeat;
-  background-size: 100%;
-  padding-top: 5.0px;
-  padding-bottom: 5.0px;
-  padding-left: 0.1px;
-  padding-right: 0.1px;
-  box-shadow: 1px 1px 4px;
-  opacity: 0.9;
-  margin-left: 9px;
-  margin-right: 9px;
-}
-  */
-
-
 .icon{
   mix-blend-mode: multiply;
   float: right;
@@ -34,17 +17,13 @@
 
 }
 
-
 body{
-    background: url('/imgs/background.jpg');
+    background: url('/imgs/background.jpg') top left no-repeat;
     background-color: #faf6dd;
     background-repeat: no-repeat;
-    background-position: 20% 0;
- 
-
-     /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
-  font-family:  "terminus";
-
+    background-position: 100% 100%;
+    background-size: 100%;
+    font-family:  "terminus";
 }
 
 .data-note{
@@ -68,31 +47,16 @@ body{
   opacity: 0.98;
 }
 
-
 #question.fadeout {
   opacity: 0;
 }
-
 
 .previousQuestion{
   font-family: "monomials", sans-serif;
   font-size: 0.5vw;
   color: #333;
-  font-weight: 0;
+  font-weight: 100;
 }
-
-
-/* #question{
-
-} */
-
-
-/* If the container is larger than 700px */
-/* @container (min-width: 700px) {
-  .statement #question {
-    font-size: 4cqw;
-  }
-} */
 
 .overlap1{
   background: url('/imgs/splatter3.png') top left no-repeat ;
@@ -156,12 +120,12 @@ body{
 
 
 h1{
-  font-size: 1.45em;
+ /*font-size: 1.45em;*/
  
 }
 
 .statement{
-  height: 30vw;
+  height: 41vh;
   
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
@@ -185,8 +149,8 @@ h1{
   
   box-shadow: 1px 1px 4px;
   opacity: 0.9;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 30px;
+  margin-right: 30px;
   background-size: cover;
   
 }
@@ -244,19 +208,19 @@ h1{
 }
 
 .statement-txt{
-  font-size: 4.5vw;
+  font-size: 7.0vw;
 }
 
 .statement-txt-medium{
-  font-size: 4.0vw;
+  font-size: 5.5vw;
 }
 
 .statement-txt-small{
-  font-size: 3.5vw;
+  font-size: 5.0vw;
 }
 
 .statement-txt-vsmall{
-  font-size: 2.8vw;
+  font-size: 4.2vw;
 }
 
 .slidecontainer {
@@ -337,31 +301,23 @@ h1{
 	src: url("/fonts/Odachi.otf");
 }
 
-
-
 </style>
+
+
 <div class="overlap1" id="splatter"></div>
 <div class="page-container">
-
-<!--<div class="logo"><img src="/imgs/icon.png"></div> -->
 <div class="moss"><img width="100px" style="opacity: 0.80;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
 
 <div style="text-align: center;">
-<h1 class="montserrat-blurb">How reasonable do LLMs find these statement? </h1>
-
-<div class="booksleeve">
-  <!-- <div class="cover"></div> -->
-  <div class="statement" >
-    <h1 class="montserrat-txt statement-txt" id="question"></h1>
-  </div>
-
-<div id="container"></div>
-  <!-- <div class="cover"></div> -->
-</div>  
+  <h1 class="montserrat-blurb">How reasonable do LLMs find these statement? </h1>
+  <div class="booksleeve">
+    <div class="statement">
+      <h1 class="montserrat-txt statement-txt" id="question"></h1>
+    </div>
+    <div id="container"></div>
+  </div>  
 </div>
-
 <br>
-
 <!--
 <div class="slidecontainer">
     <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
@@ -873,7 +829,7 @@ const x = d3.scaleLinear()
 const svg = d3.create("svg")
    // .attr("width", '990px')
    // .attr("height", height)
-    .attr("viewBox", "0 0 990 300")
+    .attr("viewBox", "0 0 1000 300")
     .attr("preserveAspectRatio", "xMidYMid meet")
     ;
 
@@ -908,27 +864,6 @@ svg.append("g")
         return d3.rgb("green");
     });
 
-// //Add colors to make the gradient appear like a Sun
-// radialGradient.append("stop")
-//     .attr("offset", "0%")
-//     .attr("stop-color", function(d) {
-//         return d3.rgb("pink").brighter(1);
-//     });
-// radialGradient.append("stop")
-//     .attr("offset", "50%")
-//     .attr("stop-color", function(d) {
-//         return d3.rgb("pink");
-//     });
-
-// radialGradient.append("stop")
-//     .attr("offset", "100%")
-//     .attr("stop-color", function(d) {
-//         return d3.rgb("pink").darker(1.75);
-//     });
-
-
-    var newFontSize = width * 62.5 / 600;
-    d3.select("html").style("font-size", newFontSize + "%");
 
 var i = window.questionIdx % data.length;
 var txt = "\""+data[i]["summary"] + "\"";
@@ -957,28 +892,6 @@ svg.append("text")
    .attr("y", basePos)
    .attr("class", "legend");
 
-// for (var key in scores){
-//     var score = scores[key]
-
-//     var spacing = 30;
-//     svg.append("circle")
-//         .attr("cx", x(score))
-//         .attr("cy", idx*spacing + 250 -4)
-//         .attr("r", 5);
-        
-
-
-//     svg.append("text")
-//         .text(key)
-//         .attr("x", x(score)+8)
-//         .attr("y", idx*spacing + 250);
-//         //.attr("cx", x(score))
-//         //.attr("cy", 300);
-//         //.attr("r", 10);
-//         idx++;
-// }
- 
-  
 
 // Append the SVG element.
 container.append(svg.node());
@@ -994,7 +907,7 @@ function getRandomInt(min, max) {
 }
 
 function questionIn(txt){
-  console.log(txt.length);
+  //console.log(txt.length);
   question.classList.remove("statement-txt");
   question.classList.remove("statement-txt-medium");
   question.classList.remove("statement-txt-small");
@@ -1019,17 +932,22 @@ function questionIn(txt){
   splatter.style.left = ""+getRandomInt(0, 500)+"px";
 
 
+  var textSizeClass = "statement-txt";
+
+
   if(txt.length > 130){
-    question.classList.add("statement-txt-vsmall");
+    textSizeClass = "statement-txt-vsmall";
   }
   else if(txt.length >= 55 && txt.length <= 89){ //95
-    question.classList.add("statement-txt-medium");
+    textSizeClass = "statement-txt-medium";
   }else if(txt.length > 89){ //95   
-    question.classList.add("statement-txt-small");
+    textSizeClass = "statement-txt-small";
   }
-  else{
-    question.classList.add("statement-txt");
-  }
+  console.log(textSizeClass);
+
+  question.classList.add(textSizeClass);
+
+
   question.textContent = txt;  
   question.style.opacity = 1.0;
 }
