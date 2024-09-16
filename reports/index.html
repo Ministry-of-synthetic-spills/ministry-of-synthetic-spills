@@ -1081,7 +1081,7 @@ function goPlot() {
           return x(score)})
         .attr("cy", function(){
           if(score == null){
-            return -50
+            return 0
           }
           return idx*spacing;
         })
@@ -1159,7 +1159,7 @@ function goPlot() {
         })
         .attr("y", function(){
           if(score == null){
-            return -50 + (offsetHack*2)
+            return 5 ;
           }
           return idx*spacing + 3;
         });
