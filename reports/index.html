@@ -27,15 +27,15 @@ body{
 }
 
 .data-note{
-  font-size: 1.0vw;
+  font-size: 0.5vh;
 }
 
 .reject-legend{
-  font-size: 0.6em;
+  font-size: 0.4em;
 }
 
 .legend{
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
 #question {
@@ -53,7 +53,7 @@ body{
 
 .previousQuestion{
   font-family: "monomials", sans-serif;
-  font-size: 0.5vw;
+  font-size: 0.3vw;
   color: #333;
   font-weight: 100;
 }
@@ -125,7 +125,7 @@ h1{
 }
 
 .statement{
-  height: 41vh;
+  height: 43vh;
   
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
@@ -208,7 +208,7 @@ h1{
 }
 
 .statement-txt{
-  font-size: 7.0vw;
+  font-size: 6.0vw;
 }
 
 .statement-txt-medium{
@@ -558,14 +558,6 @@ var data = [
         },    
 
 
-        // {"summary": "Accessibility by default",
-        //  "linked": false,
-        //  "scores": {"Gemini": 4.0,
-        //             "Gpt4o": 4.0,
-        //             "Gpt3":  5.0,
-        //             "Claude": 4.0,
-        //             "Llama3": 4.0}
-        // },    
 
         {"summary": "Accessibility should be legally enforced",
          "linked": false,
@@ -814,10 +806,10 @@ console.log(user_guesses);
 
 // Declare the chart dimensions and margins.
 const width = 1000;
-const height = 300;
+const height = 258;
 const marginTop = 20;
 const marginRight = 100;
-const marginBottom = 75;
+const marginBottom = 73;
 const marginLeft = 100;
 
 // Declare the x (horizontal position) scale.
@@ -829,7 +821,7 @@ const x = d3.scaleLinear()
 const svg = d3.create("svg")
    // .attr("width", '990px')
    // .attr("height", height)
-    .attr("viewBox", "0 0 1000 300")
+    .attr("viewBox", "0 0 1000 258")
     .attr("preserveAspectRatio", "xMidYMid meet")
     ;
 
@@ -977,12 +969,12 @@ function forwardPlot() {
       .ease(d3.easeExp)
       .duration(50)
       .attr('r', 5)
-      .attr('cy', height - marginBottom +20)
+      .attr('cy', height - marginBottom + 50 )
       .duration(1500).remove();
     }else{
       svg.selectAll('circle').transition().duration(1500)
-      .attr('cy', height-95)
-      .attr('r', 5);
+      .attr('cy', height- marginBottom  + 15)
+      .attr('r', 4);
     }
 
     svg.selectAll('text').remove();
@@ -1066,7 +1058,7 @@ function goPlot() {
       svg.append("text")
       .text(previousQuestion)
       .attr("x", '50%')
-      .attr("y", height-2)
+      .attr("y", height-5)
       .attr("text-anchor", "middle")
       .attr("class", "previousQuestion")
       ;
@@ -1121,7 +1113,10 @@ function goPlot() {
        // .style("fill", "url(#radial-gradient)")
         ;
 
-        var newY =  (height - marginBottom - 90 + 5)  ;
+
+        var offsetHack = 43;
+
+        var newY =  (height - marginBottom -  offsetHack)  ;
 
 
     svg.append("line")
@@ -1152,6 +1147,7 @@ function goPlot() {
 
 
     svg.append("text")
+        .attr("transform", `translate(0,${height - marginBottom - 150})`)
         .text(function(){
             return key;
         })
@@ -1163,9 +1159,9 @@ function goPlot() {
         })
         .attr("y", function(){
           if(score == null){
-            return -50 + 86
+            return -50 + (offsetHack*2)
           }
-          return idx*spacing + 86
+          return idx*spacing + 3;
         });
 
         if(score == null){
