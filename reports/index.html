@@ -871,7 +871,9 @@ question.append(txt);
 var scores =  data[i]["scores"];
 var idx=0;
 
-var basePos = height - marginBottom + 35;
+var basePostSpacing = 33;
+
+var basePos = height - marginBottom + basePostSpacing;
 
 svg.append("text")
   .text("v.Unreasonable")
@@ -1017,7 +1019,7 @@ function backwardPlot() {
 }
 
 function addLabels(){
-  var basePos = height - marginBottom + 35;
+  var basePos = height - marginBottom + basePostSpacing;
 
   svg.append("text")
   .text("v.Unreasonable")
@@ -1222,7 +1224,7 @@ function goPlot() {
         ;
     }
     
-     var basePos = height - marginBottom + 35;
+     var basePos = height - marginBottom + basePostSpacing;
 
 svg.append("text")
   .text("v.Unreasonable")
