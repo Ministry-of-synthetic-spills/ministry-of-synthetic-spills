@@ -27,6 +27,14 @@
   */
 
 
+.icon{
+  mix-blend-mode: multiply;
+  float: right;
+  width: 50px;
+
+}
+
+
 body{
     background: url('/imgs/background.jpg');
     background-color: #faf6dd;
@@ -213,6 +221,7 @@ h1{
   font-weight: 400;
   font-style: normal;
   margin: 2px; 
+  font-size: 1.5vw;
   
 }
 
@@ -287,6 +296,7 @@ h1{
 }
 
 .scribble{
+  mix-blend-mode: overlay;
   font-family: "Odachi";
   opacity: 0.5;
   margin-left: 40px;
@@ -326,7 +336,7 @@ h1{
 <div class="page-container">
 
 <!--<div class="logo"><img src="/imgs/icon.png"></div> -->
-<div class="moss"><img width="100px" style="opacity: 0.80;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
+<div class="moss"><img width="100px" style="opacity: 0.80; mix-blend-mode: difference;" alt="Logo of the ministry of AI Spills. A diamond like spark with some bright colors." src="/imgs/ministry.png"></div>
 
 <div style="text-align: center;">
 <h1 class="montserrat-blurb">How reasonable do LLMs find these statement? </h1>
@@ -358,8 +368,9 @@ h1{
 </div>
 </div>
 -->
+<img class="icon" src="/imgs/icon.png" ></div>
 <div class="footer">
-  <img width="100px" src="/imgs/icon.png"></div>
+  
 </div>
 
 <div class="scribble">
