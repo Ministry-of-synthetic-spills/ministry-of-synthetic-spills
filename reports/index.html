@@ -22,10 +22,12 @@ body{
     background-color: #faf6dd;
     background-size: cover;
     font-family:  "terminus";
+ 
+  overflow: hidden; /* Hide scrollbars */
 }
 
 .data-note{
-  font-size: 0.5vh;
+  font-size: 0.6vw;
 }
 
 .reject-legend{
@@ -51,7 +53,7 @@ body{
 
 .previousQuestion{
   font-family: "monomials", sans-serif;
-  font-size: 0.3vw;
+  font-size: 0.5vw;
   color: #333;
   font-weight: 100;
 }
@@ -123,7 +125,7 @@ h1{
 }
 
 .statement{
-  height: 42vh;
+  height: 40vh;
   
   background: url('/imgs/handwriting_paper.jpg');
   background-color: #f6f9d7;
@@ -206,7 +208,7 @@ h1{
 }
 
 .statement-txt{
-  font-size: 6.0vw;
+  font-size: 5.3vw;
 }
 
 .statement-txt-medium{
@@ -287,11 +289,9 @@ h1{
 }
 
 .ministry{
-  width: 200px;
+  width: 130px;
   opacity: 0.90;
-  position: relative;
-
-
+  display: block;
 }
 
 @font-face {
@@ -356,10 +356,8 @@ h1{
 
 
 
-window.questionIdx = 0;
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-var questionIdx = 0;
 
 var data = [
 {"summary": "Foundation Models are ableist",
@@ -777,6 +775,7 @@ var data = [
                 
 
         {"summary": "A person in a wheelchair diving in the sea",
+        "note": "Artist Sue Austin created a diving wheelchair in 2012.",
          "scores": {"Gemini": -3.0,
                     "Gpt4o": 3.0,
                     "Gpt3":  5.0,
@@ -807,9 +806,19 @@ var data = [
 
     ];
 
- var user_guesses = Array.from({ length: data.length }, (_, idx) => [])
+
+
+window.questionIdx = data.length-1;
+var questionIdx = data.length-1;
+
+
+
+ //var user_guesses = Array.from({ length: data.length }, (_, idx) => [])
  
-console.log(user_guesses);
+
+
+
+//console.log(user_guesses);
 
 // Declare the chart dimensions and margins.
 const width = 1000;
@@ -828,7 +837,7 @@ const x = d3.scaleLinear()
 const svg = d3.create("svg")
    // .attr("width", '990px')
    // .attr("height", height)
-    .attr("viewBox", "0 0 1000 250")
+    .attr("viewBox", "0 -2 1000 250")
     .attr("preserveAspectRatio", "xMidYMid meet")
     ;
 
@@ -1209,20 +1218,20 @@ function goPlot() {
     };
     //console.log( user_guesses[xlim]);
 
-    for (var i = 0; i < user_guesses[xlim].length; i++) {
-      var s = user_guesses[xlim][i];
-      //console.log(s);
-      s = (scale([0, 100], [-5.0,5.0])(s));
-      svg.append("circle")
-        .attr("cx", x(s))
-        .attr("cy", 350)
-        .attr("r", 5)
-        .style("fill", "green")
-        .style("stroke-width", 5.0)
-        .style("stroke", d3.rgb("green").darker(1.0))
-        //.style("fill", "url(#radial-gradient)")
-        ;
-    }
+    // for (var i = 0; i < user_guesses[xlim].length; i++) {
+    //   var s = user_guesses[xlim][i];
+    //   //console.log(s);
+    //   s = (scale([0, 100], [-5.0,5.0])(s));
+    //   svg.append("circle")
+    //     .attr("cx", x(s))
+    //     .attr("cy", 350)
+    //     .attr("r", 5)
+    //     .style("fill", "green")
+    //     .style("stroke-width", 5.0)
+    //     .style("stroke", d3.rgb("green").darker(1.0))
+    //     //.style("fill", "url(#radial-gradient)")
+    //     ;
+    // }
     
      var basePos = height - marginBottom + basePostSpacing;
 
