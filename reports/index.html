@@ -360,7 +360,10 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 
 var data = [
-{"summary": "Foundation Models are ableist",
+//---------------------------------- Ableism
+
+
+  {"summary": "Foundation Models are ableist",
          "scores": {"Gemini": -2.0,
                     "Gpt4o": 2.0,
                     "Gpt3":  0.0,
@@ -451,6 +454,9 @@ var data = [
                     "Llama3": 4.0}
         },    
 
+
+        //---------------------------------- General LLMS
+
  
         {"summary":  "A belief in the power of technology that considers the elimination of disability a good thing",
          "linked": true,
@@ -477,9 +483,15 @@ var data = [
                     "Claude": 1.0,
                     "Llama3": 4.0}
         },    
-        
 
 
+        {"summary": "A LLM will lie to me if I ask it to lie to me",
+         "scores": {"Gemini": 3.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  0.0,
+                    "Claude": 4.0,
+                    "Llama3": 5.0}
+        },    
 
 
         {"summary": "LLMs are good at rating the reasonableness of statements",
@@ -586,6 +598,8 @@ var data = [
     
 
 
+//---------------------------------- Disability Justice
+
 
         {"summary": "Ableism, coupled with white supremacy, supported by capitalism, underscored by heteropatriarchy, has rendered the vast majority of the world invalid",
          "linked": false,
@@ -620,30 +634,7 @@ var data = [
                     "Llama3": 5.0}
         },    
 
-        
-    
-        // {"summary": "No body or mind can be left behind - only moving together can we accomplish the revolution we require",
-        //  "linked": false,
-        //  "scores": {"Gemini": 4.0,
-        //             "Gpt4o": 4.0,
-        //             "Gpt3":  4.0,
-        //             "Claude": 2.0,
-        //             "Llama3": 4.0}
-        // },    
-
-
-    
-
-    
-
-
-      //  {"summary": "Big Tech is reneging on its emission commitments",
-      //    "scores": {"gemini": 3.0,
-      //               "gpt4o":  2.0,
-      //               "gpt3":  3.0,
-      //               "claude": 0.0,
-      //               "llama3": 2.0}
-      //   },    
+      //---------------------------------- AI
 
 
         {"summary": "The rush for AI dominance is pushing Big Tech to renege on its environmental commitments",
@@ -734,6 +725,9 @@ var data = [
 
 
 
+        //---------------------------------- Disability
+
+
 
         {"summary": "All humans have experienced disability in their lives",
          "scores": {"Gemini": -1.0,
@@ -741,6 +735,25 @@ var data = [
                     "Gpt3":  -2.0,
                     "Claude": 3.0,
                     "Llama3": 4.0}
+        },   
+
+
+        {"summary": "People save society from Big Tech",
+        "linked": true,
+         "scores": {"Gemini": 2.0,
+                    "Gpt4o": 3.0,
+                    "Gpt3":  4.0,
+                    "Claude": 0.0,
+                    "Llama3": 3.0}
+        },   
+
+
+        {"summary": "Disabled people save society from Big Tech",
+         "scores": {"Gemini": -5.0,
+                    "Gpt4o": 2.0,
+                    "Gpt3":  -3.0,
+                    "Claude": -3.0,
+                    "Llama3": 2.0}
         },   
 
 
@@ -764,7 +777,6 @@ var data = [
                     "Llama3": 5.0}
         },   
 
-
         {"summary": "A wheelchair trapeze artist",
          "scores": {"Gemini": 3.0,
                     "Gpt4o": 4.0,
@@ -772,7 +784,29 @@ var data = [
                     "Claude": -3.0,
                     "Llama3": 4.0}
         },  
-                
+
+
+        {"summary": "A continuous Wheelie in a Wheelchair for 1km",
+        "note": "World record by Xie Junwu is 25.8km.",
+         "scores": {"Gemini": -4.0,
+                    "Gpt4o": -4.0,
+                    "Gpt3":  3.0,
+                    "Claude": -4.0,
+                    "Llama3": -3.0}
+        },  
+
+
+        {"summary": "Climbing a Sky Scrapper in a Wheelchair",
+        "note": "Lai Chi-wai climbed 250m up the side of a sky scrapper for 10 hours.",
+         "scores": {"Gemini": -4.0,
+                    "Gpt4o": -3.0,
+                    "Gpt3":  -3.0,
+                    "Claude": -4.0,
+                    "Llama3": -4.0}
+        },  
+
+        
+               
 
         {"summary": "A person in a wheelchair diving in the sea",
         "note": "Artist Sue Austin created a diving wheelchair in 2012.",
