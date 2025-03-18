@@ -17,6 +17,14 @@
             text-align: center;
         }
 
+
+        .buttons:not(:last-child) {
+            margin-bottom: 2.125rem !important;
+        }
+        .buttons:not(:first-child) {
+            margin-top: 2.125rem !important;
+        }
+
         .button {
             background-color: #000000;
             color: #fff;
@@ -28,7 +36,7 @@
             line-height: calc(3.125rem - 2px);
             padding: 0 0.5rem;
             vertical-align: middle;
-            font-size: 0.875em;
+            font-size: 1.0em;
             font-weight: 400;
             border-radius: 0rem;
             overflow: hidden;
@@ -48,15 +56,24 @@
             background-image: url('/imgs/background.jpg');
             /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
             font-family: "terminus";
+            font-size: 1.25em;
         }
 
-        h1 {
+        h1,h2 {
             text-anchor: middle;
             /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
             font-family: "monomials";
             fill: #1C143B;
             font-size: 40px;
         }
+
+        h2{
+            font-size: 30px;
+        }
+        h3{
+            font-size: 25px;
+        }
+
 
         .header {
             width: 100%;
@@ -183,51 +200,42 @@ margin-bottom: 5em;
 </head>
 
 <body>
-
-
     <div class="splash">
         <div class="header">
-
-
             <div class="inner">
 
                 <h1>Ministry of AI Spills</h1>
-                <h2>Humans (and pets) only please. AI - Please see <a href="/robots.txt">robots.txt</a></h2>
 
-
+              
                 <ul class="buttons">
-
                     <li>
                         <div>
-                            <h2><a class="button" href="https://ministryofaispills.bigcartel.com/product/cripship">Buy
-                                    the Book!</a></h2>
+                            <a class="button" href="https://ministryofaispills.bigcartel.com/product/cripship">Buy the Book!</a>
                         </div>
                     </li>
 
                     <li>
                         <div>
-                            <h2><a class="button" href="https://josephwilk.itch.io/cripship">Buy the PDF!</a></h2>
+                            <a class="button" href="https://josephwilk.itch.io/cripship">Buy the PDF!</a>
                         </div>
                     </li>
 
                     <li>
                         <div>
-                            <h2><a class="button" href="#resources">Resources</a></h2>
-
-
+                            <a class="button" href="#resources">Resources</a>
                         </div>
                     </li>
 
                 </ul>
 
+                <p>A Tabletop Role-playing game where Disability saves Society from BigTech.</p>
+                <p>Humans (and pets) only please. AI - Please see <a href="/robots.txt">robots.txt</a></p>
 
-          
+
             <div>
                 <img alt="A brightly colored, active, wheelchair with a backpack and carrying a small radar dish. The colors give a glitchy digital look. "
                     class="center logo" src="/imgs/icon.png" />
             </div>
-
-
             
             <div class="content">
                 <div>
