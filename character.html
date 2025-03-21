@@ -1,0 +1,143 @@
+<html>
+
+
+<body>
+<script>
+  background=[];
+  background[0] = ["Make the world a better place", "Fund your creative endeavours", "Undercover journalist", "Performance artist", "Corporate Spy"];
+  background[1] = ["Help someone who does not expect it", "Find a new creative endeavour during the case", "Find a surprising lead for a new story", "Discover a new mode of being and express it", "Create a new AI buzzword never heard before"];
+  
+  intentions=[];
+  intentions[0] = ["Use an accessibility aid in a spectacular way", "Find a completely unproductive but cool way to use AI", "Undermine the authority of an AI CEO", "Destroy an AI in a spectacular fashion", "Get an AI to swear at you", "Corrupt an AI's training dataset in a subtle way", "Build worker power", "Plant a seed for a surprising revolution"];
+
+
+  experience=[];
+  experience[0] = ["Criptastic Hack", "Crip-Kinship", "Crip-time", "World Builders", "World Breakers", "Dreaming Justice"];
+
+  look=[];
+  look[0] = ["Film noir", "Solar punk", "Aquatic", "Academic", "Ancient", "Baroque", "Supernatural", "Cripborg", "Gothic", "Steampunk", "Aquatic", "Recycled/Vintage", "Inter-dimensional", "Artificial", "Futuristic", "Androgynous", "Surreal", "Forgotten", "Clandestine", "Haute couture"]; 
+  look[1] = ["Machinic", "Business casual", "Unorthodox", "Subversive", "Revolutionary", "Haunted", "Jaded", "Watchful", "Methodical", "Brooding", "Romantic", "Translucent", "Guarded", "Conflicted", "Sceptical", "Eccentric", "Inquisitive", "Intense", "Resourceful", "Unshakeable"];
+  look[2] = ["Human", "Animal", "Sea creature", "Fungus", "Plant", "Ghost/Shadow", "Insect", "Gas", "Robot", "Cripborg", "Scientist", "Bureaucrat", "Archivist/Collector", "Poet", "Detective", "Element of nature", "Hive Mind/Union", "Hologram", "Luddite", "Occultist"];
+
+  equipment=[];
+  equipment[0] = ["Hand crafted", "Biological", "Otherworldly/ethereal", "High-tech/Magical", "Self destructing", "Self homing", "Psychedelic/Dreamlike", "Anti-gravity", "Haunted/Malevolent", "Antique", "Fortune telling", "Opulent/Radiant", "Fluffy/Fuzzy", "Hypnotic", "Shapeshifting", "Sentient", "Parasitic", "Musical", "Stealthy", "Emergency"];
+  equipment[1] = ["Whispering", "Glimmering", "Luminescent", "Chaotic", "Collapsible", "Solar-powered", "Discreet", "Biodegradable", "Transparent", "Weightless", "Modular", "Fractal", "Unauthorised", "Shadowy", "Experimental", "Stylish", "Monstrous", "Heat-resistant", "Hand-cranked", "Ministry certified"];
+  equipment[2] = ["Wheelchair", "Watch", "Eyeglasses", "Stick", "Cape", "Procedure Manual", "Weapon", "Notepad & pen", "Crutches", "Flashlight", "Wifi jammer", "Spoons", "Mirror", "Pills", "Magnet", "Sealant", "Key fob", "Pet (organic)", "Spray Paint", "Rubber stamp"]; 
+
+
+  function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+  }
+  
+  function d6(){
+      return Math.floor(Math.random() * 5);
+  }
+
+  function d20(){
+      return Math.floor(Math.random() * 19);
+  }
+  
+  function getRandomNoun() {
+      return d[d6()][d6()];
+  }
+
+  function make(){
+      let bdice = d6();
+      let b = background[0][bdice];
+      let bi = background[1][bdice];
+      document.getElementById("background").innerHTML = b;
+      document.getElementById("background-intent").innerHTML = bi;
+
+      let idice = d6();
+      let is = shuffle(intentions[0]); 
+      let i1 = is[idice];
+      let i2 = is[idice+1];
+      document.getElementById("intention1").innerHTML = i1;
+      document.getElementById("intention2").innerHTML = i2;
+
+      let e = experience[0][d6()];
+      document.getElementById("experience").innerHTML = e;
+
+      let look1 = look[0][d20()];
+      let look2 = look[1][d20()];
+      let look3 = look[2][d20()];
+
+      document.getElementById("look1").innerHTML = look1;
+      document.getElementById("look2").innerHTML = look2;
+      document.getElementById("look3").innerHTML = look3;
+
+      let equip1 = equipment[0][d20()];
+      let equip2 = equipment[1][d20()];
+      let equip3 = equipment[2][d20()];
+
+      document.getElementById("equip1").innerHTML = equip1;
+      document.getElementById("equip2").innerHTML = equip2;
+      document.getElementById("equip3").innerHTML = equip3;
+
+  }
+</script>
+
+<style>
+  body{
+      font-size: 1.5em;
+  }
+  .field{
+      font-weight: 800;
+  }
+  .attribute{
+      padding: 10px;
+  }
+  .attribute span{
+      padding-left: 10px;
+  }
+  input{
+      font-size: 1.5em;
+  }
+  #character{
+      border: 1px solid #222;
+      padding: 20px;
+  }
+  
+</style>
+
+
+
+<input type="button" value="Generate Character" onClick="make();"></input>
+
+
+
+<div id="character">
+  <div class="attribute"><span class="field">Name</span>
+    <div><input type="textbox"></div>
+  </div>
+
+  <div class="attribute"><span class="field">Pronouns</span>
+    <div><input type="textbox"></div>
+  </div>
+  
+  <div class="attribute"><span class="field">Background</span>
+    <div><span id="background"></span></div>
+    <div><input type="checkbox"><span id="background-intent"></span></div>
+  </div>
+  <div class="attribute"><span class="field">Intentions</span>
+    <div><input type="checkbox"><span id="intention1"></span></div>
+    <div><input type="checkbox"><span id="intention2"></span></div>
+  </div>
+  <div class="attribute"><span class="field">Experience</span><div><span id="experience"></span></div></div>
+
+  <div class="attribute"><span class="field">Look/Description</span><div><span id="look1"></span>, <span id="look2"></span>, <span id="look3"></span></div></div>
+
+  <div class="attribute">
+  <span class="field">Equipment</span>
+    <div><span>AI Mapper</span></div>
+    <div id="equip"><input type="checkbox"></input><span id="equip1"></span>, <span id="equip2"></span>, <span id="equip3"></span></div>
+    </div>
+  
+  
+</div>
+</body>
+</html>
