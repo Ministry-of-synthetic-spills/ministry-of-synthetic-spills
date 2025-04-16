@@ -10,11 +10,16 @@
             display: flex;
 
             cursor: default;
-            justify-content: center;
+            
             letter-spacing: 0;
             padding: 0;
             text-align: center;
         }
+
+        .main{
+            justify-content: center;
+        }
+
         .buttons:not(:last-child) {
             margin-bottom: 2.125rem !important;
         }
@@ -42,6 +47,7 @@
         .center {
             display: block;
             margin-left: auto;
+            text-align: justify;
             margin-right: auto;
             width: 50%;
         }
@@ -71,14 +77,14 @@
 
         .header {
             width: 100%;
-            text-align: center;
+            text-align: justify;
             margin-top: 1em;
           
         }
 
         .footer {
             width: 100%;
-            text-align: center;
+            text-align: justify;
             margin-top: 5em;
             margin-bottom: 5em;
             background: url('/imgs/splatter3.png') left  no-repeat;
@@ -164,7 +170,7 @@
 
 .content{
     width: 100%;
-text-align: center;
+
 margin-top: 5em;
 margin-bottom: 5em;
 }
@@ -179,17 +185,18 @@ margin-bottom: 5em;
 }
 
 .sparkle{
-    
     position: relative;
-
-left: 46px;
+left: 0px;
 bottom: 33px;
 }
 
 .ministry{
     display:flex;
-    justify-content: center;
-    
+}
+.ministry-text{
+    left: -40px;
+    position: relative;
+    text-align: left;
 }
 
     </style>
@@ -201,10 +208,10 @@ bottom: 33px;
         <div class="header">
             <div class="inner">
 
-                <div class="ministry"><span><img src="/imgs/sparkle.svg" class="sparkle" width="70" alt="The AI symbol of three diamonds."/></span><span style="text-align: left;"><h1>Ministry for <br>AI Spills</h1></span></div>
+                <div class="ministry"><span><img src="/imgs/sparkle.svg" class="sparkle" width="70" alt="The AI symbol of three diamonds."/></span><span class="ministry-text"><h1>Ministry for <br>AI Spills</h1></span></div>
 
               
-                <ul class="buttons">
+                <ul class="buttons main">
                     <li>
                         <div>
                             <a class="button" href="https://ministryofaispills.bigcartel.com/product/cripship">Buy the Book!</a>
