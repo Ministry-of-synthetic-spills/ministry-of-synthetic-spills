@@ -198,3 +198,7 @@ hr {
     text-align: left;
     text-shadow: 0.3px 0.5px 2.0px color(srgb 0.775 0.747 0.6665);
 }
+
+p{
+    line-height: 1.5em;
+}
