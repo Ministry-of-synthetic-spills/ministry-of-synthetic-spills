@@ -240,6 +240,10 @@ hr {
         padding: 1.5rem 0.0rem;
     }
 
+    .button-content {
+        padding: 1.5rem 0.0rem;
+    }
+
     .buttons li a {
         width: 100%;
     }
