@@ -302,3 +302,11 @@ p {
     margin-right: 0px;
     text-align: center;
 }
+
+.footer-hr {
+    opacity: 0.8;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
