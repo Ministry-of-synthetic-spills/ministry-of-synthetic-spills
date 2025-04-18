@@ -28,7 +28,7 @@
     background-color: #000000;
     color: #fff;
     border: solid 2px #9d7901;
-
+    text-decoration: none;
     display: inline-block;
     width: 12.0rem;
     height: 4.125rem;
@@ -188,6 +188,10 @@ hr {
     position: relative; top: -58px; right: -10px; opacity: 0.7;
 }
 
+.texture-number{
+    opacity: 0.3; mix-blend-mode: darken; margin-top: -30; margin-right: -60px;
+}
+
 @media (max-width: 1024px){
     .inner {
         padding-left: 5px;
@@ -200,7 +204,7 @@ hr {
     }
 
     .button{
-        padding: 0.25rem 0.0rem;
+        padding: 1.5rem 0.0rem;
     }
  
     .buttons li a {
@@ -226,6 +230,9 @@ hr {
         width: auto;
         height: auto;
         top:0px;       
+    }
+    .texture-number{
+        display:none;
     }
 }
 
@@ -260,6 +267,7 @@ hr {
     width: 90%;
     position: relative;
     text-align: left;
+    opacity: 0.7;
 }
 
 p{
