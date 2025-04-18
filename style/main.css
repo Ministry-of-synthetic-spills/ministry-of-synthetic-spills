@@ -15,6 +15,11 @@
     color: #f4ed6b !important;
 }
 
+.buttons .button-content:hover {
+    border-color: #f4ed6b !important;
+    color: #f4ed6b !important;
+}
+
 .main {
     justify-content: center;
 }
