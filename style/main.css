@@ -4,9 +4,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     display: flex;
-
     cursor: default;
-
     letter-spacing: 0;
     padding: 0;
     text-align: center;
@@ -42,7 +40,7 @@
     text-overflow: ellipsis;
 }
 
-.buttons li{
+.buttons li {
     max-width: 100%;
 }
 
@@ -166,33 +164,39 @@ hr {
 
 
 .inner {
-        padding-left: 30px;
-        padding-right: 30px;
-}    
-
-
- .sticker-break{
-        display: flex; 
-        width: 100%; 
-        justify-content: space-between; 
-        height: 110px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.sticker{
-    position: relative; 
+
+.sticker-break {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 110px;
+}
+
+.sticker {
+    position: relative;
     top: -100px;
 }
 
 
-.clippy{
-    position: relative; top: -58px; right: -10px; opacity: 0.7;
+.clippy {
+    position: relative;
+    top: -58px;
+    right: -10px;
+    opacity: 0.7;
 }
 
-.texture-number{
-    opacity: 0.3; mix-blend-mode: darken; margin-top: -30; margin-right: -60px;
+.texture-number {
+    opacity: 0.3;
+    mix-blend-mode: darken;
+    margin-top: -30;
+    margin-right: -60px;
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
     .inner {
         padding-left: 5px;
         padding-right: 5px;
@@ -203,36 +207,38 @@ hr {
         flex-wrap: nowrap;
     }
 
-    .button{
+    .button {
         padding: 1.5rem 0.0rem;
     }
- 
+
     .buttons li a {
         width: 100%;
     }
 
-    body{
+    body {
         font-size: 2.0em;
     }
 
-    .clippy{
-       top: -69px;
+    .clippy {
+        top: -69px;
     }
 }
 
-@media (max-width: 570px){
-    .sticker-break{
+@media (max-width: 570px) {
+    .sticker-break {
         flex-direction: column;
         flex-wrap: nowrap;
         height: auto;
     }
-    .sticker{
+
+    .sticker {
         width: auto;
         height: auto;
-        top:0px;       
+        top: 0px;
     }
-    .texture-number{
-        display:none;
+
+    .texture-number {
+        display: none;
     }
 }
 
@@ -270,13 +276,15 @@ hr {
     opacity: 0.7;
 }
 
-p{
+p {
     line-height: 1.5em;
 }
 
-
-
-
-
-
-
+.printed-hr {
+    opacity: 0.8;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
