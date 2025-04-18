@@ -40,7 +40,10 @@
     border-radius: 0rem;
     overflow: hidden;
     text-overflow: ellipsis;
+}
 
+.buttons li{
+    max-width: 100%;
 }
 
 .center {
@@ -63,7 +66,6 @@ h2 {
     text-anchor: middle;
     /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
     font-family: "monomials";
-    fill: #1C143B;
     font-size: 56px;
 }
 
@@ -73,6 +75,7 @@ h2 {
 
 h3 {
     font-size: 38px;
+    text-align: left;
 }
 
 
@@ -161,9 +164,61 @@ hr {
     background: url('/imgs/splatter2_big.png') no-repeat;
 }
 
+
 .inner {
-    padding-left: 30px;
-    padding-right: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+}    
+
+
+ .sticker-break{
+        display: flex; 
+        width: 100%; 
+        justify-content: space-between; 
+        height: 110px;
+}
+
+.sticker{
+    position: relative; 
+    top: -100px;
+}
+
+
+@media (max-width: 1024px){
+    .inner {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .button{
+        padding: 0.25rem 0.0rem;
+    }
+ 
+    .buttons li a {
+        width: 100%;
+    }
+
+    body{
+        font-size: 2.0em;
+    }
+}
+
+@media (max-width: 570px){
+    .sticker-break{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    .sticker{
+        width: auto;
+        height: auto;
+        top:0px;       
+    }
 }
 
 .content {
@@ -202,3 +257,10 @@ hr {
 p{
     line-height: 1.5em;
 }
+
+
+
+
+
+
+
