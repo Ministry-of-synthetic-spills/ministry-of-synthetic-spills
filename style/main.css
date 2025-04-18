@@ -45,6 +45,10 @@
     text-overflow: ellipsis;
 }
 
+.buttons li:nth-child(odd) .button{
+    background: url('/imgs/back_texture3.png') repeat !important; 
+}
+
 .button-content {
     background: url('/imgs/back_texture.png') repeat;
     color: #fff;
