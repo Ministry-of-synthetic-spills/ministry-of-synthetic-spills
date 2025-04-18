@@ -10,6 +10,11 @@
     text-align: center;
 }
 
+.buttons .button:hover {
+    border-color: #f4ed6b !important;
+    color: #f4ed6b !important;
+}
+
 .main {
     justify-content: center;
 }
