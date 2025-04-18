@@ -28,7 +28,7 @@
 }
 
 .button {
-    background-color: #000000;
+    background: url('/imgs/back_texture.png') repeat;
     color: #fff;
     border: solid 2px #9d7901;
     text-decoration: none;
@@ -195,7 +195,7 @@ hr {
 }
 
 .texture-number {
-    opacity: 0.3;
+    opacity: 0.4;
     mix-blend-mode: darken;
     margin-top: -30;
     margin-right: -60px;
