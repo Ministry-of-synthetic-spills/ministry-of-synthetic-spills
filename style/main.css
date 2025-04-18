@@ -276,7 +276,12 @@ hr {
 }
 
 .ministry-text {
-    left: -40px;
+    -webkit-mask-image: linear-gradient(80deg, #000 0%, #000 39.9%, transparent 40%, #000 40.2%, #000 45%, transparent);
+    /*mask-image: linear-gradient(70deg, black, transparent);*/
+    mask-image: linear-gradient(80deg, #000 0%, #000 39.9%, transparent 40%, #000 40.2%, #000 45%, transparent);
+    
+
+    left: -154px;
     width: 90%;
     position: relative;
     text-align: left;
