@@ -45,6 +45,25 @@
     text-overflow: ellipsis;
 }
 
+.button-content {
+    background: url('/imgs/back_texture.png') repeat;
+    color: #fff;
+    border: solid 2px #9d7901;
+    text-decoration: none;
+    display: inline-block;
+    width: 14.0rem;
+    height: 4.125rem;
+    line-height: calc(4.125rem - 2px);
+    padding: 0.5rem 0.5rem;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-weight: 400;
+    border-radius: 0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 .buttons li {
     max-width: 100%;
 }
@@ -306,6 +325,7 @@ p {
 .footer-hr {
     opacity: 0.8;
     margin-bottom: 30px;
+
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
