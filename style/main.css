@@ -267,6 +267,10 @@ hr {
     .clippy {
         top: -69px;
     }
+
+    .texture-stamp {
+        margin-right: -10px;
+    }
 }
 
 @media (max-width: 570px) {
