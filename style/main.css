@@ -273,6 +273,11 @@ hr {
     }
 }
 
+.footer-texture tr td {
+    border: 1px dotted #382e0f;
+    text-align: center; vertical-align: top;
+}
+
 @media (max-width: 570px) {
     .sticker-break {
         flex-direction: column;
