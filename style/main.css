@@ -226,7 +226,14 @@ hr {
     opacity: 0.4;
     mix-blend-mode: darken;
     margin-top: -30;
-    margin-right: -60px;
+    margin-right: -90px;
+}
+
+.texture-stamp{
+    opacity: 0.8;
+    mix-blend-mode: darken;
+    margin-top: -30;
+    margin-right: -40px;
 }
 
 @media (max-width: 1024px) {
