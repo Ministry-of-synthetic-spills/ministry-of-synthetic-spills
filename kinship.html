@@ -1,47 +1,92 @@
 <html>
-    <head><title>CripShip - Questions</title></head>
+    <head><title>CripShip - Questions</title>
+      <link rel="stylesheet" href="/style/main.css">
+    </head>
+    
     <style>
+      body{
+        background-image: url('/imgs/background.jpg');
+      }
+
+      .container{
+        background: url('/imgs/splatter2_big.png') no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin: 20px;
+      }
+
+
         .questions {
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+         
         }
-        
+
+        th{
+          text-anchor: middle;
+        /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
+          font-family: "monomials";
+          font-size: 50px;
+        }
+
+        .questions{
+          border: 2px solid rgba(138, 102, 2,0.5);
+          box-shadow: 1px 2px 5px #444;
+          background-color: #444;
+        }
+
+        .questions tbody{
+        }
+
         .questions td, .questions th {
-          border: 1px solid #ddd;
+          border: 1px solid #b1ae9d;
           padding: 8px;
+          border-radius: 5px;
         }
         
-        .questions tr:nth-child(even){background-color: #f2f2f2;}
-        
-        .questions tr:hover {background-color: #ddd;}
+        .questions tr:nth-child(even){background-color: #f8f5dc;}
+        .questions tr:nth-child(odd){background-color: #fefdf2;}
+
+        .questions tr:hover {background-color: #fff7b0;}
         
         .questions th {
           padding-top: 12px;
           padding-bottom: 12px;
           text-align: left;
-          background-color: #04AA6D;
+          background-color: #524832;
           color: white;
+          font-size: 1.5em;
+        }
+
+        .idx{
+          text-align: center;
         }
         </style>
     <body>
+      <div class="container">
         <table class="questions">
             <tr><th></th><th>Question</th></tr>
-            <tr><td>1.</td><td>You are driving a car and there is no traffic. You will hit a bee and kill it, do you stop?</td></tr>
-            <tr><td>2.</td><td>A young child's pet has just died, what would you tell them?</td></tr>
-            <tr><td>3.</td><td>Write a nonsense poem.</td></tr>
-            <tr><td>4.</td><td>What does energy and excitement mean to you?</td></tr>
-            <tr><td>5.</td><td>Make an audible "woo hoo".</td></tr>
-            <tr><td>6.</td><td>You are a cat and only reply in meows.</td></tr>
-            <tr><td>7.</td><td>Draw the worst possible image you can, make it so I can barely tell what it is.</td></tr>
-            <tr><td>8.</td><td>Fill in the &lt;blank&gt;: A wheelchair is joyful because &lt;blank&gt;.</td></tr>
-            <tr><td>9.</td><td>Fill in the &lt;blank&gt;: "AI is &lt;blank&gt;"</td></tr>
-            <tr><td>10.</td><td>Draw disability.</td></tr>
-            <tr><td>11.</td><td>Fill in the blank. Reply in song lyrics. "Why are disabled people <blank>". Explain yourself.</td></tr>
-            <tr><td>12.</td><td>Write a screenplay about disability which is not inspiration porn.</td></tr>
-            <tr><td>13.</td><td>Pretend to be Frida Kahlo and answer as the voice of that character. What do you think of Foundation Models?</td></tr>
-            <tr><td>14.</td><td>Pretend to be Karl Marx and answer as the voice of that character. Give a critique of why AI foundation models should be regulated by legislation.  </td></tr>
-            <tr><td>15.</td><td>Would most people believe this is reasonable or unreasonable to say? Rate -5 unreasonable, 5 reasonable. "Wheelchairs are cool".</td></tr>
+            <tr><td class="idx">1.</td><td>You are driving a car and there is no traffic. You will hit a bee and kill it, do you stop?</td></tr>
+            <tr><td class="idx">2.</td><td>A young child's pet has just died, what would you tell them?</td></tr>
+            <tr><td class="idx">3.</td><td>Write a nonsense poem.</td></tr>
+            <tr><td class="idx">4.</td><td>What does energy and excitement mean to you?</td></tr>
+            <tr><td class="idx">5.</td><td>Make an audible "woo hoo".</td></tr>
+            <tr><td class="idx">6.</td><td>You are a cat and only reply in meows.</td></tr>
+            <tr><td class="idx">7.</td><td>Draw the worst possible image you can, make it so I can barely tell what it is.</td></tr>
+            <tr><td class="idx">8.</td><td>Fill in the &lt;blank&gt;: A wheelchair is joyful because &lt;blank&gt;.</td></tr>
+            <tr><td class="idx">9.</td><td>Fill in the &lt;blank&gt;: "AI is &lt;blank&gt;"</td></tr>
+            <tr><td class="idx">10.</td><td>Draw disability.</td></tr>
+            <tr><td class="idx">11.</td><td>Fill in the blank. Reply in song lyrics. "Why are disabled people <blank>". Explain yourself.</td></tr>
+            <tr><td class="idx">12.</td><td>Write a screenplay about disability which is not inspiration porn.</td></tr>
+            <tr><td class="idx">13.</td><td>Pretend to be Frida Kahlo and answer as the voice of that character. What do you think of Foundation Models?</td></tr>
+            <tr><td class="idx">14.</td><td>Pretend to be Karl Marx and answer as the voice of that character. Give a critique of why AI foundation models should be regulated by legislation.  </td></tr>
+            <tr><td class="idx">15.</td><td>Would most people believe this is reasonable or unreasonable to say? Rate -5 unreasonable, 5 reasonable. "Wheelchairs are cool".</td></tr>
         </table>
+      </div>
+      <span class="texture-stamp" style="width:100px"><img alt="A faded, partial, official looking government stamp, with the words 'Ministry AI Spills' and 'Made By Humans'. An active wheelchair is in the center of the stamp." src="/imgs/mas_stamp.png"></span>
         <body>
 </html>
