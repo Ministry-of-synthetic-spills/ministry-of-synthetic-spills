@@ -136,16 +136,58 @@ h3 {
 
 }
 
+.splash3{
+    border-radius: 0px;
+    background: url('/imgs/RSCO-Grid-Paper.jpg') top center;
+    background-size: 20%;
+    /* background-color: transparent; */
+    box-shadow: 1.0px 2px 5px #444;
+    /* border: 0.5px solid color(srgb 0.69 0.6225 0.5451); */
+    max-width: 1050px;
+    justify-content: center;
+    /* margin-left: -15px; */
+    position: relative;
+    /* left: -120px; */
+    padding-left: 0px;
+    rotate: 0.3deg;
+    margin-top: 39px;
+    background-position: center;
+    border: 1.0px solid color(srgb 0.795 0.7721 0.6757);
+
+}
+
+.splash2{
+/* border-radius: 0px; */
+    background: url('/imgs/RSCO-Rag-Paper.jpg') top center; 
+/* background-color: transparent; */
+box-shadow: 1.0px 2px 5px #444;
+/* border: 0.5px solid color(srgb 0.69 0.6225 0.5451); */
+/*max-width: 1050px;*/
+justify-content: center;
+/* margin-left: -15px; */
+position: relative;
+/* left: -120px; */
+/* padding-left: 11px; */
+rotate: 0.4deg;
+margin-top: 15px;
+background-position: center;
+border: 1.0px solid color(srgb 0.62 0.6144 0.5921 / 0.8);
+
+}
+
 .splash {
-    border-radius: 5px;
     background: url('/imgs/laid_paper_dirty_border.jpg') top center;
     background-color: transparent;
-    margin: 10px;
+    /* margin: 10px; */
     padding: 1em;
-    box-shadow: 1px 2px 5px #444;
-    border: 0.5px solid color(srgb 0.69 0.6225 0.5451);
-    max-width: 1000px;
+    box-shadow: 1px 2px 5px #494634;
+    border: 1.0px solid color(srgb 0.795 0.7721 0.6757);
+    /* max-width: 1000px; */
     justify-content: center;
+    margin-left: 0px;
+    /* margin-right: -11px; */
+    margin-top: 5px;
+    rotate: -0.6deg;
 }
 
 hr {
