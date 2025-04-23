@@ -34,7 +34,6 @@
 
 .button {
     background-color: #000;
-    background: url('/imgs/back_texture.png') repeat;
     color: #fff;
     border: solid 2px #9d7901;
     text-decoration: none;
