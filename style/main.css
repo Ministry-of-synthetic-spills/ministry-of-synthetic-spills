@@ -272,6 +272,7 @@ hr {
     mix-blend-mode: darken;
     margin-top: -30;
     margin-right: -40px;
+    width:100px;
 }
 
 @media (max-width: 1024px) {
@@ -316,24 +317,6 @@ hr {
     text-align: center; vertical-align: top;
 }
 
-@media (max-width: 570px) {
-    .sticker-break {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        height: auto;
-    }
-
-    .sticker {
-        width: auto;
-        height: auto;
-        top: 0px;
-    }
-
-    .texture-number {
-        display: none;
-    }
-}
-
 .content {
     width: 100%;
     margin-top: 0em;
@@ -355,6 +338,7 @@ hr {
     bottom: 33px;
     mix-blend-mode: plus-darker;
     opacity: 0.9;
+    width: 180px;
 }
 
 .ministry {
@@ -397,3 +381,67 @@ p {
     margin-right: 0px;
     text-align: center;
 }
+
+
+@media (max-width: 570px) {
+    .texture-stamp{
+        opacity: 0.8;
+        mix-blend-mode: darken;
+        margin-top: -30;
+        margin-right: 0px;
+        width:70px;
+    }
+
+    .splash3{
+        margin: 0px;
+        rotate: 0deg;
+    }
+    
+    .splash2{
+        margin: 0px;
+        rotate: 0deg;
+    }
+    
+    .splash {
+        margin: 0px;
+        rotate: 0deg;
+    }
+
+    h1{
+        font-size: 31px;
+    }
+
+    .footer-texture{display:none;}
+
+    body{
+        font-size: 1.5em;
+    }
+
+    .sparkle{
+        width: 114px;
+    }
+
+    .sticker-break {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+
+    .sticker {
+        width: auto;
+        height: auto;
+        top: 0px;
+    }
+
+    .texture-number {
+        display: none;
+    }
+
+    .ministry-text{
+        width: 236px;
+        left: -99px;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+}
+
