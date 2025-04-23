@@ -364,6 +364,10 @@ p {
     line-height: 1.5em;
 }
 
+.hand{
+    width: 300px;
+}
+
 .printed-hr {
     opacity: 0.8;
     margin-bottom: 30px;
@@ -380,6 +384,10 @@ p {
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
+}
+
+.coffee-spill{
+    opacity: 0.5; text-align: right; height: 10px;
 }
 
 
@@ -409,6 +417,10 @@ p {
 
     h1{
         font-size: 31px;
+    }
+
+    h2,h3{
+        font-size: 28px;
     }
 
     .footer-texture{display:none;}
@@ -443,5 +455,15 @@ p {
         mask-image: none;
         -webkit-mask-image: none;
     }
+}
+
+@media (max-width: 480px) {
+    body{font-size: 1.3em;}
+    .coffee-spill{width: 0px;}
+    .ministry-text{ width: 100%}
+    .texture-stamp{display:none;}
+    .clippy{display:none;}
+    .hand{width: 100%; }
+    
 }
 
