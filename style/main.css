@@ -176,7 +176,7 @@ border: 1.0px solid color(srgb 0.62 0.6144 0.5921 / 0.8);
 }
 
 .splash {
-    background: url('/imgs/laid_paper_dirty_border.jpg') top center;
+    background: url('/imgs/laid_paper_dirty_border_op.jpg') top center;
     background-color: transparent;
     /* margin: 10px; */
     padding: 1em;
