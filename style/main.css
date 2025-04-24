@@ -472,11 +472,12 @@ p {
         -webkit-mask-image: none;
     }
     body{font-size: 1.3em;}
-    .coffee-spill{width: 0px;}
+    .sticker-three-stamp {max-width: 100%;}
+    .coffee-spill{width: 100%; position: absolute; left: -30px;}
     .ministry-text{ width: 100%}
     .texture-stamp{display:none;}
     .clippy{display:none;}
-    .hand{width: auto; }
+    .hand{max-width:100%; }
     
 }
 
