@@ -275,42 +275,7 @@ hr {
     width:100px;
 }
 
-@media (max-width: 1024px) {
-    .inner {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
 
-    .buttons {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 3rem;
-    }
-
-    .button {
-        padding: 1.5rem 0.0rem;
-    }
-
-    .button-content {
-        padding: 1.5rem 0.0rem;
-    }
-
-    .buttons li a {
-        width: 100%;
-    }
-
-    body {
-        font-size: 2.0em;
-    }
-
-    .clippy {
-        top: -69px;
-    }
-
-    .texture-stamp {
-        margin-right: -10px;
-    }
-}
 
 .footer-texture tr td {
     border: 1px dotted #382e0f;
@@ -391,6 +356,43 @@ p {
 }
 
 
+@media (max-width: 1024px) {
+    .inner {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 3rem;
+    }
+
+    .button {
+        padding: 1.5rem 0.0rem;
+    }
+
+    .button-content {
+        padding: 1.5rem 0.0rem;
+    }
+
+    .buttons li a {
+        width: 100%;
+    }
+
+    body {
+        font-size: 2.0em;
+    }
+
+    .clippy {
+        top: -69px;
+    }
+
+    .texture-stamp {
+        margin-right: -10px;
+    }
+}
+
 @media (max-width: 570px) {
     .texture-stamp{
         opacity: 0.8;
@@ -463,7 +465,7 @@ p {
     .ministry-text{ width: 100%}
     .texture-stamp{display:none;}
     .clippy{display:none;}
-    .hand{width: 100%; }
+    .hand{width: auto; }
     
 }
 
