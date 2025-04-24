@@ -254,17 +254,24 @@ hr {
 
 
 .clippy {
-    position: relative;
-    top: -58px;
-    right: -10px;
     opacity: 0.7;
+}
+
+.clippy img{
+    position: absolute;
+    right: 60px;
+    top: -5px;
 }
 
 .texture-number {
     opacity: 0.4;
     mix-blend-mode: darken;
-    margin-top: -30;
-    margin-right: -90px;
+}
+
+.texture-number img{
+    right: 90px;
+    top: 27px;
+    position: absolute;
 }
 
 .texture-stamp{
@@ -298,12 +305,11 @@ hr {
 }
 
 .sparkle {
-    position: relative;
-    left: 0px;
-    bottom: 33px;
+    position: absolute;
     mix-blend-mode: plus-darker;
     opacity: 0.9;
     width: 180px;
+    top: 10px;
 }
 
 .ministry {
@@ -315,10 +321,9 @@ hr {
     -webkit-mask-image: linear-gradient(80deg, #000 0%, #000 39.9%, transparent 40%, #000 40.2%, #000 45%, transparent);
     /*mask-image: linear-gradient(70deg, black, transparent);*/
     mask-image: linear-gradient(80deg, #000 0%, #000 39.9%, transparent 40%, #000 40.2%, #000 45%, transparent);
-    
-
-    left: -154px;
+    left: 20px;
     width: 90%;
+    bottom: 7px;
     position: relative;
     text-align: left;
     opacity: 0.7;
@@ -384,12 +389,12 @@ p {
         font-size: 2.0em;
     }
 
-    .clippy {
-        top: -69px;
+    .texture-stamp img {
+        top: 20px;
     }
 
-    .texture-stamp {
-        margin-right: -10px;
+    .ministry-text{
+        bottom: 20px;
     }
 }
 
@@ -418,7 +423,7 @@ p {
     }
 
     h1{
-        font-size: 31px;
+        font-size: 40px;
     }
 
     h2,h3{
@@ -432,7 +437,7 @@ p {
     }
 
     .sparkle{
-        width: 114px;
+        width: 124px;
     }
 
     .sticker-break {
@@ -452,14 +457,20 @@ p {
     }
 
     .ministry-text{
-        width: 236px;
-        left: -99px;
+        left: 15px;
+        top: -18px;
         mask-image: none;
         -webkit-mask-image: none;
     }
 }
 
 @media (max-width: 480px) {
+    .ministry-text{
+        left: 15px;
+        top: -11px;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
     body{font-size: 1.3em;}
     .coffee-spill{width: 0px;}
     .ministry-text{ width: 100%}
