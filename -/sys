@@ -1,0 +1,13 @@
+[Service]
+WorkingDirectory=/home/josephwilk/Workspace/ministry-of-synthetic-spills/
+ExecStart= python -m http.server -d /home/josephwilk/Workspace/ministry-of-synthetic-spills/ 
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=propanel
+User=josephwilk
+Group=josephwilk
+Environment=NODE_ENV=production
+[Install]
+WantedBy=multi-user.target
+
