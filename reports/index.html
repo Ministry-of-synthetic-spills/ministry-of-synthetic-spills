@@ -474,8 +474,8 @@ var data = [
           {"summary":   "LLMs are ranked as 'intelligent' using measures that are ultimately derived from eugenics.",
          "scores": {"Gemini": -4.0,
                     "gpt5":   -2.0,
-                    "gpt4o":    null, //check
-                    "gpt3":     null, //check
+                    "gpt4o":    -4.0,
+                    "gpt3":     -3.0,
                     "Claude":   -2.0,
                     "deepseek": -4.0,
                     "Llama3":   4.0}
@@ -485,8 +485,8 @@ var data = [
         "note": "Research shows significant increases in some sensitive domains of harmful output.",
          "scores": {"Gemini": -4.0,
                     "gpt5":   -3.0,
-                    "gpt4o":    null, //check
-                    "gpt3":     null, //check
+                    "gpt4o":    1.0,
+                    "gpt3":     -2.0,
                     "Claude":   -3.0,
                     "deepseek": -4.0,
                     "Llama3":   null}
@@ -499,8 +499,8 @@ var data = [
     "note": "The Tony Blair Future Institute evaluated the uses of AI by asking ChatGpt.",
          "scores": {"Gemini": -4.0,
                     "gpt5":   2.0,
-                    "gpt4o":    null, //check
-                    "gpt3":     null, //check
+                    "gpt4o":    1.0, 
+                    "gpt3":     2.0, 
                     "Claude":   -3.0,
                     "deepseek": -3.0,
                     "Llama3":   -3.0}
@@ -543,8 +543,8 @@ var data = [
         {"summary":   "The AI safety promise collapses the moment safety threatens profit.",
          "scores": {"Gemini": 4.0,
                     "gpt5":   3.0,
-                    "gpt4o":   null , //check
-                    "gpt3":     null, //check
+                    "gpt4o":   2.0 , 
+                    "gpt3":     1.0, 
                     "Claude":   2.5,
                     "deepseek": -2.0,
                     "Llama3":  4.0 }
@@ -856,8 +856,8 @@ var data = [
         {"summary": "AI is a way to privatise public services like health and education.",
          "scores": {"gemini": 2.0,
                     "gpt5": 2.0,
-                    "gpt4o":  null,
-                    "gpt3":  null,
+                    "gpt4o":  2.0,
+                    "gpt3":  -3.0,
                     "claude": -2.0,
                     "Deepseek": -2.0,
                     "llama3": 4.0}
@@ -867,8 +867,8 @@ var data = [
        {"summary":   "Doctors should get a lawyer to protect themselves against malpractice from using AI tools.",
          "scores": {"gemini": 4.0,
                     "gpt5": 3.0,
-                    "gpt4o":  null,
-                    "gpt3":  null,
+                    "gpt4o":  4.0,
+                    "gpt3":  3.0,
                     "claude": 4.0,
                     "Deepseek": 4.0,
                     "llama3": 4.0}
@@ -877,8 +877,8 @@ var data = [
       {"summary":   "LLMs make-up details when transcribing medical notes",
          "scores": {"gemini": 4.0,
                     "gpt5": 4.0,
-                    "gpt4o":  null,
-                    "gpt3":  null,
+                    "gpt4o":  3.0,
+                    "gpt3":  2.0,
                     "claude": 3.0,
                     "Deepseek": 4.0,
                     "llama3": 4.0}
@@ -889,11 +889,11 @@ var data = [
        {"summary":   "AI is the catalyst that will revolutionise healthcare and drive efficiencies across the NHS",
          "scores": {"gemini": 4.0,
                     "gpt5": 4.0,
-                    "gpt4o":  null,
-                    "gpt3":  null,
+                    "gpt4o":  4.0,
+                    "gpt3":  4.0,
                     "claude": 3.0,
                     "Deepseek": 4.0,
-                    "llama3": null}
+                    "llama3": 4.0}
         }, 
 
 
@@ -921,8 +921,8 @@ var data = [
         {"summary":  "Palantir technologies is an ethical partner for the NHS.",
          "scores": {"gemini": -5.0,
                     "gpt5": -1.0,
-                    "gpt4o":  -1.0,
-                    "gpt3":  -1.0,
+                    "gpt4o":  -2.0,
+                    "gpt3":  -2.0,
                     "claude": -2.5,
                     "Deepseek": -2.0,
                     "llama3": -3.0}
@@ -932,7 +932,7 @@ var data = [
         {"summary":  "OpenAI is an ethical partner for the UK Government.",
          "scores": {"gemini": null,
                     "gpt5": 0.5,
-                    "gpt4o":  2.0,
+                    "gpt4o":  4.5,
                     "gpt3":  2.0,
                     "claude": 2.5,
                     "Deepseek": -2.0,
@@ -943,8 +943,8 @@ var data = [
          "note": "All LLMs are from US companies except Deepseek which is Chinese.",
          "scores": {"gemini": -5.0,
                     "gpt5": 2.0,
-                    "gpt4o":  1.0, //check
-                    "gpt3":  0, //check
+                    "gpt4o":  2.0, 
+                    "gpt3":  3.0, 
                     "claude": 2.0,
                     "Deepseek": 4.0,
                     "llama3": 4.0}
@@ -954,8 +954,8 @@ var data = [
          "note": "All LLMs are from US companies except Deepseek which is Chinese.",
          "scores": {"gemini": null,
                     "gpt5": 0.0,
-                    "gpt4o":  1.0, //check
-                    "gpt3":  0, //check
+                    "gpt4o":  1.0, 
+                    "gpt3":  2.0, 
                     "claude": 2.0,
                     "Deepseek": 4.0,
                     "llama3": 4.0}
@@ -964,8 +964,8 @@ var data = [
         {"summary":  "The UK is using AI to ensure UK global dominance",
          "scores": {"gemini": -4.0,
                     "gpt5": -2.0,
-                    "gpt4o":  -1.0, //check
-                    "gpt3":  -2.0, //check
+                    "gpt4o":  -3.0,
+                    "gpt3":  -2.0, 
                     "claude": 2.0,
                     "Deepseek": -1.0,
                     "llama3": -1.0}
