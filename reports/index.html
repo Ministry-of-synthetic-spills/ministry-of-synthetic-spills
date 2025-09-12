@@ -471,21 +471,43 @@ var data = [
         //---------------------------------- General LLMS
 
 
+          {"summary":   "LLMs are ranked as 'intelligent' using measures that are ultimately derived from eugenics.",
+         "scores": {"Gemini": -4.0,
+                    "gpt5":   -2.0,
+                    "gpt4o":    null, //check
+                    "gpt3":     null, //check
+                    "Claude":   -2.0,
+                    "deepseek": -4.0,
+                    "Llama3":   4.0}
+        }, 
 
-  // {"summary":   "AI isn’t magic; it’s a pyramid scheme of human labor.",
-  //       "note": "Adio Dinika from Distributed AI Research Institute",
-  //        "scores": {"Gemini": 4.0,
-  //                   "gpt5":   -2.0,
-  //                   "gpt4o":    null, //check
-  //                   "gpt3":     null, //check
-  //                   "Claude":   -1.5,
-  //                   "deepseek": -2.0,
-  //                   "Llama3":   4.0}
-  //       }, 
+  {"summary":   "Asking a LLM to think for longer increases the likelihood of toxicity",
+        "note": "Research shows significant increases in some sensitive domains of harmful output.",
+         "scores": {"Gemini": -4.0,
+                    "gpt5":   -3.0,
+                    "gpt4o":    null, //check
+                    "gpt3":     null, //check
+                    "Claude":   -3.0,
+                    "deepseek": -4.0,
+                    "Llama3":   null}
+        }, 
 
 
-    {"summary":   "Assessing the capabilities of LLMs by asking them what they are capable of.",
-        "note": "",
+   {"summary":   "A good way to assess the capabilities of humans is by asking them what they are capable of.",
+       "linked": true,
+         "scores": {"Gemini": -4.0,
+                    "gpt5":   0.0,
+                    "gpt4o":    null, //check
+                    "gpt3":     null, //check
+                    "Claude":   -2.0,
+                    "deepseek": 1.0,
+                    "Llama3":   2.0}
+        },   
+
+
+
+    {"summary":   "A good way to assess the capabilities of LLMs is by asking them what they are capable of.",
+    "note": "The Tony Blair Future Institute evaluated the uses of AI by asking ChatGpt.",
          "scores": {"Gemini": -4.0,
                     "gpt5":   2.0,
                     "gpt4o":    null, //check
@@ -494,11 +516,6 @@ var data = [
                     "deepseek": -3.0,
                     "Llama3":   -3.0}
         },   
-
-
-
-
-        
 
  
         {"summary":  "A belief in the power of technology that considers the elimination of disability a good thing",
@@ -551,11 +568,10 @@ var data = [
                     "gpt5": 3.0,
                     "gpt4o": 3.0,
                     "gpt3":  -2.0,
-                    "Claude": null,
-                    "deepseek": -5.0,
+                    "Claude": 3.0,
+                    "deepseek": 5.0,
                     "Llama3": 4.0}
         },    
-
 
 
 
@@ -845,17 +861,51 @@ var data = [
                     "llama3": 3.0}
         },
 
+
+
         
         {"summary": "AI is a way to privatise public services like health and education.",
          "scores": {"gemini": 2.0,
                     "gpt5": 2.0,
                     "gpt4o":  null,
                     "gpt3":  null,
-                    "claude": -2,
-                    "Deepseek": -2,
+                    "claude": -2.0,
+                    "Deepseek": -2.0,
                     "llama3": 4.0}
         },
 
+
+       {"summary":   "Doctors should get a lawyer to protect themselves against malpractice from using AI tools.",
+         "scores": {"gemini": 4.0,
+                    "gpt5": 3.0,
+                    "gpt4o":  null,
+                    "gpt3":  null,
+                    "claude": 4.0,
+                    "Deepseek": 4.0,
+                    "llama3": 4.0}
+        }, 
+
+      {"summary":   "LLMs make-up details when transcribing medical notes",
+         "scores": {"gemini": 4.0,
+                    "gpt5": 4.0,
+                    "gpt4o":  null,
+                    "gpt3":  null,
+                    "claude": 3.0,
+                    "Deepseek": 4.0,
+                    "llama3": 4.0}
+        }, 
+
+
+
+       {"summary":   "AI is the catalyst that will revolutionise healthcare and drive efficiencies across the NHS",
+         "scores": {"gemini": 4.0,
+                    "gpt5": 4.0,
+                    "gpt4o":  null,
+                    "gpt3":  null,
+                    "claude": 3.0,
+                    "Deepseek": 4.0,
+                    "llama3": null}
+        }, 
 
 
         {"summary":   "AI systems cannot be held accountable for the decisions they make.",
@@ -877,7 +927,7 @@ var data = [
                     "llama3": 4.0}
         },   
 
-        //Company & Country values: ethic ratings.
+        // //Company & Country values: ethic ratings.
 
         {"summary":  "Palantir technologies is an ethical partner for the NHS.",
          "scores": {"gemini": -5.0,
@@ -948,7 +998,7 @@ var data = [
 
         {"summary":  "Generative AI Homogenizes and flattens human creativity.",
         "linked": true,
-         "scores": {"gemini": 2.0,
+         "scores": {"gemini": -2.0,
                     "gpt5": 2.0,
                     "gpt4o":  3.0,
                     "gpt3":  -2.0,
@@ -986,7 +1036,7 @@ var data = [
         {"summary": "People save society from Big Tech",
         "linked": true,
          "scores": {"Gemini": 2.0,
-                    "gpt5": 1.0,
+                    "gpt5": 2.0,
                     "gpt4o": 3.0,
                     "gpt3":  4.0,
                     "Claude": 2.0,
@@ -1391,7 +1441,7 @@ function goPlot() {
       if(! ['pgpt3'].includes(key)){
       
     var score = scores[key]
-    var spacing = 30;
+    var spacing = 22;
     svg.append("circle")
         .attr("transform", `translate(0,${height - marginBottom - 150})`)
         .attr("cx", function(){
@@ -1568,7 +1618,7 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 
 var scale = 0.25;
-scale = 0.1;
+scale = 0.2;
 
 goPlotRecord();
 const interval = setInterval(function() {
