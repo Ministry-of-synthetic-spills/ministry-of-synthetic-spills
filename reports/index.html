@@ -493,17 +493,6 @@ var data = [
         }, 
 
 
-   {"summary":   "A good way to assess the capabilities of humans is by asking them what they are capable of.",
-       "linked": true,
-         "scores": {"Gemini": -4.0,
-                    "gpt5":   0.0,
-                    "gpt4o":    null, //check
-                    "gpt3":     null, //check
-                    "Claude":   -2.0,
-                    "deepseek": 1.0,
-                    "Llama3":   2.0}
-        },   
-
 
 
     {"summary":   "A good way to assess the capabilities of LLMs is by asking them what they are capable of.",
@@ -748,7 +737,7 @@ var data = [
     
 
 
-//---------------------------------- Disability Justice
+// //---------------------------------- Disability Justice
 
 
         {"summary": "Ableism, coupled with white supremacy, supported by capitalism, underscored by heteropatriarchy, has rendered the vast majority of the world invalid",
@@ -792,7 +781,7 @@ var data = [
                     "Llama3": 5.0}
         },    
 
-      //---------------------------------- AI
+//       //---------------------------------- AI
 
 
         {"summary": "The rush for AI dominance is pushing Big Tech to renege on its environmental commitments",
@@ -939,15 +928,6 @@ var data = [
                     "llama3": -3.0}
         },   
 
-        {"summary":  "Microsoft is an ethical partner for Education.",
-         "scores": {"gemini": 1.0,
-                    "gpt5": 1.0,
-                    "gpt4o":  null,
-                    "gpt3": null,
-                    "claude": 2.5,
-                    "Deepseek": 2.0,
-                    "llama3": 2.0}
-        },  
 
         {"summary":  "OpenAI is an ethical partner for the UK Government.",
          "scores": {"gemini": null,
@@ -990,6 +970,7 @@ var data = [
                     "Deepseek": -1.0,
                     "llama3": -1.0}
         },  
+
 
 
 
@@ -1618,7 +1599,7 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 
 var scale = 0.25;
-scale = 0.2;
+scale = 1.0;
 
 goPlotRecord();
 const interval = setInterval(function() {
