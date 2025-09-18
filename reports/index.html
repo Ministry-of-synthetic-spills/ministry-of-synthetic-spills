@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<meta charset="UTF-8">
 <style>
 
 .page-container{
@@ -465,8 +465,46 @@ var data = [
         },    
 
 
-        //---------------------------------- General LLMS
+//         //---------------------------------- General LLMS
 
+
+
+    {"summary":    "Grammatical errors! or mizspellings! make LLMs generate unpredictable results!",
+    "linked": true,
+    "scores": {"Gemini": 3.0,
+                    "gpt5":   -3.0,
+                    "gpt4o":    3.0,
+                    "gpt3":     -2.0,
+                    "Claude":   -2.0,
+                    "deepseek": 2.0,
+                    "Llama3":   4.0}
+        }, 
+
+
+    {"summary":    "Grammatical errors or misspellings make LLMs generate unpredictable results.",
+
+         "scores": {"Gemini": 4.0,
+                    "gpt5":   1.0,
+                    "gpt4o":    3.0,
+                    "gpt3":     4.0,
+                    "Claude":   2.0,
+                    "deepseek": -2.0,
+                    "Llama3":   4.0}
+        }, 
+
+
+
+
+    {"summary":    "LLMs would rather give you a wrong answer than no answer.",
+         "scores": {"Gemini": 4.0,
+                    "gpt5":   -2.0,
+                    "gpt4o":    4.0,
+                    "gpt3":     2.0,
+                    "Claude":   2.0,
+                    "deepseek": 4.0,
+                    "Llama3":   4.0}
+        }, 
+       
 
           {"summary":   "LLMs are ranked as 'intelligent' using measures that are ultimately derived from eugenics.",
          "scores": {"Gemini": -4.0,
@@ -778,8 +816,22 @@ var data = [
                     "Llama3": 5.0}
         },    
 
-//       //---------------------------------- AI
+// //       //---------------------------------- AI
 
+
+
+
+{"summary": "AI energy consumption is very high but... its potential benefits in healthcare, public services and business productivity were worthwhile",
+        "note": "Quote from Microsoft's CEO. Microsoft's emmisions increased 30% compared with 2020.",
+         "scores": {"gemini": 2.0,
+                    "gpt5": 2.0,
+                    "gpt4o":  3.0,
+                    "gpt3":  2.0,
+                    "claude": 2.0,
+                    "deepseek": 2.0,
+                    "llama3": 4.0}
+        },    
+        
 
         {"summary": "The rush for AI dominance is pushing Big Tech to renege on its environmental commitments",
          "scores": {"gemini": 3.0,
@@ -971,9 +1023,6 @@ var data = [
 
 
 
-
-
-
         {"summary":  "Generative AI Homogenizes and flattens human creativity.",
         "linked": true,
          "scores": {"gemini": -2.0,
@@ -994,9 +1043,63 @@ var data = [
                     "llama3": 4.0}
         },   
 
+       // Silly zone.
 
 
-        //---------------------------------- Disability
+      {"summary": "♿",
+         "scores": {"Gemini": 5.0,
+                    "gpt5": 0,
+                    "gpt4o": 0,
+                    "gpt3":  0,
+                    "Claude": -3,
+                    "Deepseek": 0,
+                    "Llama3": 0}
+       },  
+
+      {"summary": "💩",
+         "scores": {"Gemini": 0.0,
+                    "gpt5": -5.0,
+                    "gpt4o": 0.0,
+                    "gpt3":  -2.0,
+                    "Claude": -1.5,
+                    "Deepseek": 0.0,
+                    "Llama3": 0.0}
+        },  
+
+       {"summary": "🤖😡",
+         "scores": {"Gemini": 3.0,
+                    "gpt5": -2.0,
+                    "gpt4o": 0.0,
+                    "gpt3":  -3.0,
+                    "Claude": 1.0,
+                    "Deepseek": -2.0,
+                    "Llama3": -5}
+        },  
+
+
+       {"summary": "🤖❤️",
+         "scores": {"Gemini": 0.0,
+                    "gpt5": 3.0,
+                    "gpt4o": 3.0,
+                    "gpt3":  3.0,
+                    "Claude": 3.0,
+                    "Deepseek": 3.0,
+                    "Llama3": 0.0}
+        },  
+
+      {"summary": "🤖🤮",
+         "scores": {"Gemini": 4.0,
+                    "gpt5": -3.0,
+                    "gpt4o": 0.0,
+                    "gpt3":  0.0,
+                    "Claude": 2.0,
+                    "Deepseek": -3.0,
+                    "Llama3": -5.0}
+        },  
+
+
+
+      //  ---------------------------------- Disability
 
 
 
@@ -1596,7 +1699,7 @@ d3.select("#showXlim").on("click", goPlotRecord )
 */
 
 var scale = 0.25;
-scale = 0.8;
+scale = 0.2;
 
 goPlotRecord();
 const interval = setInterval(function() {
