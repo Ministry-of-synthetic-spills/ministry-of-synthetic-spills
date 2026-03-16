@@ -1,0 +1,565 @@
+<html>
+
+<head>
+  <title>Killer Crips 3000: Character Generator</title>
+</head>
+
+<body>
+  <style>
+    .container{
+      background: url('/imgs/splatter2_big.png') no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .id-card {
+      width: 70%;
+      max-width: 980px;
+      background-image: url('/imgs/laid_paper_dirty.jpg');
+      border-radius: 12px;
+      border: 1px solid #c1beb7;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      
+    }
+
+    .top-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .bottom-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .footer-logo{
+      flex: 1;
+    }
+
+    .barcode{
+      align-content: flex-end;
+      height: 80px;
+    }
+
+    .photo {
+      width: 300px;
+      height: 350px;
+      background-color: #fafaf4;
+      border: 1px dashed #ccccbb;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 20px;
+      text-align: center;
+      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo img {
+      width: 95%;
+      height: 95%;
+      opacity: 0.05;
+      object-fit: cover;
+      
+    }
+
+    .ministry {
+      text-align: right;
+      font-family: "monomials";
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    h2,
+    p {
+      margin: 5px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #3d1d07;
+      font-family: "monomials";
+    }
+
+    .full-width {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .signature {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 30px;
+      color: #03003f;
+    }
+
+    .id-card input[type=text]{
+      width: 100%;
+      height: 50px;
+      font-size: 1.5em;
+    }
+
+    .id-card input[type=checkbox]{
+      width: 20px;
+      height: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .controls{
+      width:100%;
+      text-align: center;
+    }
+
+    .controls input{
+      font-size: 1.3em;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .inject{
+      font-size: 1.3em;
+    }
+
+    .full-inject{
+      margin-left: 20px
+    }
+
+    .title{
+      margin-top: 20px;
+    }
+
+
+    .buttons {
+      list-style: none;
+      gap: 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+
+      cursor: default;
+      justify-content: center;
+      letter-spacing: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+
+    .buttons:not(:last-child) {
+      margin-bottom: 2.125rem !important;
+    }
+
+    .buttons:not(:first-child) {
+      margin-top: 2.125rem !important;
+    }
+
+    .button {
+      background-color: #000000;
+      color: #fff;
+      border: solid 1px #9d7901;
+
+      display: inline-block;
+      width: 10.25rem;
+      height: 3.125rem;
+      line-height: calc(3.125rem - 2px);
+      padding: 0.5rem 0.5rem;
+      vertical-align: middle;
+      font-size: 1.0em;
+      font-weight: 400;
+      border-radius: 0rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    body {
+      background-image: url('/imgs/background.jpg');
+      /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
+      font-family: "terminus";
+      font-size: 1.5em;
+    }
+
+    h1,
+    h2 {
+      text-anchor: middle;
+      /*font-family: "Helvetica Neue", Helvetica, sans-serif; */
+      font-family: "monomials";
+      fill: #1C143B;
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+
+    .header {
+      width: 100%;
+      text-align: center;
+      margin-top: 1em;
+
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 5em;
+      margin-bottom: 5em;
+      background: url('/imgs/splatter3.png') left no-repeat;
+    }
+
+    .moss {
+      position: fixed;
+      width: 10%;
+      margin: auto;
+      margin: 0px;
+      padding: 0px;
+      opacity: 0.5;
+
+
+    }
+
+    .splash {
+      border-radius: 5px;
+      background: url('/imgs/handwriting_paper.jpg') top center;
+      background-size: 100% 50%;
+      background-color: transparent;
+      margin: 10px;
+      padding: 1em;
+      box-shadow: 1px 2px 5px #444;
+      border: 0.5px solid color(srgb 0.69 0.6225 0.5451);
+      max-width: 1200px;
+      justify-content: center;
+    }
+
+    hr {
+      width: 100%;
+      height: 5px;
+      border: 0px;
+      opacity: 0.21;
+      border-radius: 2px;
+
+      background: linear-gradient(to right, black, rgb(185, 1, 1), rgb(255, 255, 0), rgb(0, 255, 213), rgb(0, 127, 0), black);
+    }
+
+    .spacer {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      opacity: 0.9;
+    }
+
+    @font-face {
+      font-family: "monomials";
+      src: url("/fonts/Monomials.ttf");
+    }
+
+    @font-face {
+      font-family: "terminus";
+      src: url("/fonts/TerminusTTF-4.49.3.ttf");
+    }
+
+    .wrapper {
+      -webkit-overflow-scrolling: touch;
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      min-height: var(--viewport-height);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+
+    }
+
+    #main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: url('/imgs/splatter2_big.png') no-repeat;
+    }
+
+    .inner {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .content {
+      width: 100%;
+      text-align: center;
+      margin-top: 5em;
+      margin-bottom: 5em;
+    }
+
+    .logo {
+      background: url('/imgs/splatter5.png') no-repeat;
+    }
+  </style>
+
+  <script>
+    background = [];
+    background[0] = ["Wheely", 
+                     "Floaty", 
+                     "Sticky", 
+                     "Friendy", 
+                     "Clicky", 
+                     "Normy" ];
+    background[1] = ["Combat mobility vehicle for ramming and crushing things",
+                     "Hovering weapons platform bed controlling drones from afar.",
+                     "Sneaky rogue and close combat specialist with a walking stick.",
+                     "Search and rescue specialist with a fluffy best friend:",
+                     "Fast talking, fast shooting, stimtoy-using sniper.",
+                     "Simple and easy to play character who reduces difficulty for the team."];
+
+
+    intentions = [];
+    intentions[0] = ["Wheelchair", "Mobility Scooter", "Handcycle", "Motorbike", "Unicycle", "Mini-tank", "Giant cat drawn chariot"];
+    intentions[1] = ["Bed (Hovering)", "Comfy chair", "Hoverboard", "Jetpack", "Mechanical wings", "Bubble you float inside"];
+    intentions[2] = ["White Cane", "Crutch", "Walking frame", "Walking stick", "leg or finger or back brace", "grabby stick"];
+    intentions[3] = ["Service Dog", "Carer", "Living shadow", "Ghostly fox", "Robot butler", "Imaginary friend", "Helper monkey"];
+    intentions[4] = ["Fidget toy", "Noisecanceling headphones", "Dark glasses",  "white noise machine", "hologram projector"];
+    intentions[5] = [""];
+
+
+    experience = [];
+    experience[0] = ["Ramming speed - Spend 1 spoon and gain a D6 (+organic target)", 
+                     "Crushing weight - When using BRAWL, spend 1 spoon: gain a D6 (+bipedal target)",
+                     "Repair droids - Spend 1 spoon and gain two D6 on FIX rolls."]
+    experience[1] = ["Drone Hive - Spend 1 spoon: gain a D6, summon a swarm of drones under your control.(+ Outdoors)", 
+                    "Rocket slam - Spend 1 spoon: gain a D6 and ram an enemy with your vehicle (+ Bipedal)", 
+                    "Psychological Warfare - When using UNNERVE, spend a 6 to gain 4 successes"];
+    experience[2] = ["Sweep the leg - Spend 1 spoon, get a D6 (+vs bipedal target)", 
+                     "Laser sword mode - Spend 1 spoon, get a D6 (+Target with limbs)",
+                     "Sneaky Secrets - If you rolled SNEAK, spend a 6 to get 4 successes.",
+                     "Spray and Pray - If you rolled SHOOT, spend a 6 to get 5 successes."];
+    experience[3] = ["Feed the beast - Happier helper - Spend 1 spoon: get a D6 (+ outdoors)",
+                     "Crip Time -  Spend 1 spoon: Get two D6 on SEARCH rolls.",
+                     "Power of Friendship - Spend 1 rolled 6: Spread 3 spoons among allies ."];
+    experience[4] = ["Hyperfocus - Gain a spoon if SHOOT has 2 or fewer successes",
+                     "Feedback Loop - Spend 1 spoon: Get a D6 (+ Reverberation)",
+                     "Infodump - Spend 1 spoon: Get two D6 when using CON"];
+
+    experience[5] = ["Consistency - 6s only count as 1 but you will always have a minimum of 3 successes.",
+                     "Spontaneity - Spend 1 spoon to get a D6.",
+                     "Accepted as valid - Spend 1 spoon to get two D6 for CON or SNEAK rolls."];
+
+    look = [];
+    look[0] = ["Film noir", "Solar punk", "Aquatic", "Academic", "Ancient", "Baroque", "Supernatural", "Cripborg", "Gothic", "Steampunk", "Aquatic", "Recycled/Vintage", "Inter-dimensional", "Artificial", "Futuristic", "Androgynous", "Surreal", "Forgotten", "Clandestine", "Haute couture"];
+    look[1] = ["Machinic", "Business casual", "Unorthodox", "Subversive", "Revolutionary", "Haunted", "Jaded", "Watchful", "Methodical", "Brooding", "Romantic", "Translucent", "Guarded", "Conflicted", "Sceptical", "Eccentric", "Inquisitive", "Intense", "Resourceful", "Unshakeable"];
+    look[2] = ["Human", "Animal", "Sea creature", "Fungus", "Plant", "Ghost/Shadow", "Insect", "Gas", "Robot", "Cripborg", "Scientist", "Bureaucrat", "Archivist/Collector", "Poet", "Detective", "Element of nature", "Hive Mind/Union", "Hologram", "Luddite", "Occultist"];
+
+
+    equipmentStandard = [];
+    equipmentStandard[0] = ["Rocket fuel (++ Surprise)", 
+                            "Spiked helmet (++ Sharp))"];
+
+    equipmentStandard[1] = ["Chaingun (++shredding)",
+                            "Object launcher (++found)"];
+
+    equipmentStandard[2] = ["Machine Gun (++ Wide spread)",
+                            "Taser attachment (++ Sparkly)"];
+    equipmentStandard[3] = ["Fencing Sword (++ Engarde!)", "Reinforced Femur (++ vs head bone"];
+
+    equipmentStandard[4] = ["Sniper rifle (++ Outdoors)", "Grenade (++ Enclosed spaces)"];
+
+    equipmentStandard[5] = ["Silenced Pistol (++ Stealth)", "Lucky Crowbar (Mechanical++)"];
+
+    equipment = [];
+    equipment[0] = ["Marcus Sergius Silus's Prosthetic Hand",
+                    "Alexander the Great's copy of the Iliad",
+                    "Hephaestus's Golden Automatons",
+                    "Hatshepsut's Nemes Headdress",
+  "Götz von Berlichingen's Sword",
+"Tutankhamun's Walking Sticks",
+"Gaius Mucius Scaevola's Fire",
+"Philip II of Macedon's Greave",
+"Stephen Hawking's Vocaliser",
+"Stevie Wonder's Harmonica" ,
+"Rosa Luxemburg's Pet Cat",
+"Ray Charles's Sunglasses",
+"Philip III Arrhidaeus's Coin",
+"Lord Byron's Walking Stick",
+"Roosevelt's Fountain Pen",
+"Lord Snowdon's Camera",
+"Frida Carlo's Paintbrush",
+"Ian Drury's Microphone",
+"King Baldwin IV's Mask",
+"Che Guevara's Inhaler",
+"Rod of the Fisher King",
+"Julius Caesar's Crown",
+"Lord Nelson's Sword",
+"Van Gogh's Scissors", 
+"Kurt Cobain's Guitar",
+"Claudius's Scroll",
+"Siptah's Statue",
+"Seneb's Boat"];
+
+
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function d6() {
+      return Math.floor(Math.random() * 5);
+    }
+
+
+    function dn(n){
+      return Math.floor(Math.random() * (n-1));
+    }
+
+    function d20() {
+      return Math.floor(Math.random() * 19);
+    }
+
+    function getRandomNoun() {
+      return d[d6()][d6()];
+    }
+
+    function make() {
+      let bdice = d6();
+      let b = background[0][bdice];
+      let bi = background[1][bdice];
+      document.getElementById("background").innerHTML = b;
+      //document.getElementById("background-intent").innerHTML = bi;
+
+      let idice = d6();
+      let is = (intentions[bdice]);
+      let id2 = dn(is.length);
+      let i1 = is[id2];
+      //let i2 = is[idice + 1];
+      document.getElementById("intention1").innerHTML = i1;
+      //document.getElementById("intention2").innerHTML = i2;
+
+      let edice = d6();
+      
+      let e = experience[edice];
+      let e1 = dn(e.length);
+      let pe = e[e1];
+      document.getElementById("experience").innerHTML = pe;
+      document.getElementById("look1").innerHTML = bi;
+
+
+      let equipDefault = equipmentStandard[bdice];
+
+      let equips = "<ul>";
+      equipDefault.forEach(element => {
+        equips += "<li>"+ element +"</li>"
+      });
+      equips += "</ul>";
+      document.getElementById("equipDefault").innerHTML = equips;
+
+      let e1dice = dn(equipment[0].length);
+
+      let equip1 = equipment[0][e1dice];
+
+      document.getElementById("equip1").innerHTML = equip1;
+
+      let finalId = bdice;
+      document.getElementById("idcode").innerHTML = "--" + finalId + "-" + e1dice + "-" + e1 + "-"
+      + id2 + "--";
+
+
+    }
+
+    function sign(){
+      let n = document.getElementById("name").value
+      document.getElementById("sig").innerHTML = n;
+      
+    }
+
+  </script>
+
+  <div class="controls">
+    <input type="button" value="Click to Generate a Random Character" onClick="make();"></input>
+  </div>
+
+  <div class="container">
+  <div class="id-card">
+    <div class="ministry"><img height="20px" src="/imgs/stamps_01.svg"></div>
+    <div class="ministry"><img height="50px" src="/imgs/clean_ministry_small.png">Criptopia Records</div>
+    <div class="top-section">
+      <div class="photo">
+        <img src="/imgs/profile_default_04.jpg" alt="Photo" />
+      </div>
+      <div class="details">
+        <p class="title"><span class="label">Class:</span> <span id="background"></span></p>
+        <p class="title"><span class="label ">Look/Description:</span></p>
+        <p class="inject"><span  id="look1"></span> <span id="look2"></span> <span id="look3"></span></p>
+
+        <p class="full-width title"><span class="label">Cosmetic:</span> 
+        <div><span id="intention1"></span></div>
+      
+
+
+        <p class="title"><span class="label">Name:</span></p>
+        <p><input type="text" id="name" onchange="sign()"></p>
+        <p class="title"><span class="label">Pronouns:</span></p>
+        <p><input type="text"></p>
+
+      </div>
+    </div>
+    
+    
+    <p class="full-width" style="text-align: center; opacity: 0.5;"><img width="80" src="/imgs/stamps_02.png"></p>
+
+    <p style="margin-left:-20px; margin-right:-20px; padding: 0px;"><img width="100%" src="/imgs/fold.png"></p>
+
+ 
+    
+    <p class="full-width title"><span class="label">Ability:</span></p>
+    <p class="full-width full-inject"><span id="experience"></span></p>
+    
+    
+    <p class="full-width title"><span class="label">Equipment:</span></p>
+    <p class="full-width"><span id="equipDefault"></span></p>
+
+
+    <p class="full-width title"><span class="label">Disabled Hero Relic:</span></p>
+    <p class="full-width">
+      <input type="checkbox"></input><span id="equip1"></span> 
+      <span id="equip2"></span> <span id="equip3"></span></p>    
+    
+    <p><hr></p>
+
+    <div class="bottom-section">
+      <div class="barcode">
+        <p style="float:left; font-size:0.5em;" id="idcode"></p> </div>
+      <div class="footer-logo"><img style="float:right; opacity: 0.8;" alt="" width="80px" src="/imgs/icon_bw.png"></div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+</body>
+
+</html>
