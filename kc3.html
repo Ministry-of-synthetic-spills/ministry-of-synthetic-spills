@@ -326,13 +326,16 @@
                      "Sticky", 
                      "Friendy", 
                      "Clicky", 
-                     "Normy" ];
+                    // "Normy",
+                     "Venty" ];
+
     background[1] = ["Combat mobility vehicle for ramming and crushing things",
                      "Hovering weapons platform bed controlling drones from afar.",
                      "Sneaky rogue and close combat specialist with a walking stick.",
                      "Search and rescue specialist with a fluffy best friend:",
                      "Fast talking, fast shooting, stimtoy-using sniper.",
-                     "Simple and easy to play character who reduces difficulty for the team."];
+                  //   "Simple and easy to play character who reduces difficulty for the team.",
+                     "Iron lung mech using scientist"];
 
 
     intentions = [];
@@ -341,7 +344,19 @@
     intentions[2] = ["White Cane", "Crutch", "Walking frame", "Walking stick", "leg or finger or back brace", "grabby stick"];
     intentions[3] = ["Service Dog", "Carer", "Living shadow", "Ghostly fox", "Robot butler", "Imaginary friend", "Helper monkey"];
     intentions[4] = ["Fidget toy", "Noisecanceling headphones", "Dark glasses",  "white noise machine", "hologram projector"];
-    intentions[5] = [""];
+   // intentions[5] = [""];
+    intentions[5] = ["Robo-vespa", "Spidertank", "Forklift-scorpion", "Construct-with-babycarrier"];
+
+
+    
+    statLabels = ["Fix", "Concentrate", "Sneak", "Shoot", "Brawl", "Search", "Unnerve"];
+    stats = [];
+    stats[0] = [2,3,1,4,5,2,2];
+    stats[1] = [2,3,1,4,5,2,2];
+    stats[2] = [2,3,1,4,5,2,2];
+    stats[3] = [2,3,1,4,5,2,2];
+    stats[4] = [2,3,1,4,5,2,2];
+    stats[5] = [2,3,1,4,5,2,2];
 
 
     experience = [];
@@ -362,9 +377,13 @@
                      "Feedback Loop - Spend 1 spoon: Get a D6 (+ Reverberation)",
                      "Infodump - Spend 1 spoon: Get two D6 when using CON"];
 
-    experience[5] = ["Consistency - 6s only count as 1 but you will always have a minimum of 3 successes.",
-                     "Spontaneity - Spend 1 spoon to get a D6.",
-                     "Accepted as valid - Spend 1 spoon to get two D6 for CON or SNEAK rolls."];
+    // experience[5] = ["Consistency - 6s only count as 1 but you will always have a minimum of 3 successes.",
+    //                  "Spontaneity - Spend 1 spoon to get a D6.",
+    //                  "Accepted as valid - Spend 1 spoon to get two D6 for CON or SNEAK rolls."];
+    
+    experience[5] = ["Field Recalibration - Mark Injury or spend 2 Spoons: (++ effect - this round, reroll 1’s)",
+      "Pneumatic Overdrive- Spend 1 spoon: Get a D6 (+ Outdoors)",
+      "Threat Display - Spend 1 spoon: Get two D6 when using UNNERVE" ]
 
     look = [];
     look[0] = ["Film noir", "Solar punk", "Aquatic", "Academic", "Ancient", "Baroque", "Supernatural", "Cripborg", "Gothic", "Steampunk", "Aquatic", "Recycled/Vintage", "Inter-dimensional", "Artificial", "Futuristic", "Androgynous", "Surreal", "Forgotten", "Clandestine", "Haute couture"];
@@ -385,7 +404,9 @@
 
     equipmentStandard[4] = ["Sniper rifle (++ Outdoors)", "Grenade (++ Enclosed spaces)"];
 
-    equipmentStandard[5] = ["Silenced Pistol (++ Stealth)", "Lucky Crowbar (Mechanical++)"];
+    //equipmentStandard[5] = ["Silenced Pistol (++ Stealth)", "Lucky Crowbar (Mechanical++)"];
+
+    equipmentStandard[5] = ["Tubing lasoo (++ Neck)", "Exploding batteries (++ Melt)"];
 
     equipment = [];
     equipment[0] = ["Marcus Sergius Silus's Prosthetic Hand",
@@ -427,12 +448,16 @@
     }
 
     function d6() {
-      return Math.floor(Math.random() * 5);
+      return Math.floor(Math.random() * 6);
+    }
+
+    function d7() {
+      return Math.floor(Math.random() * 7);
     }
 
 
     function dn(n){
-      return Math.floor(Math.random() * (n-1));
+      return Math.floor(Math.random() * (n));
     }
 
     function d20() {
@@ -445,6 +470,7 @@
 
     function make() {
       let bdice = d6();
+      console.log(bdice);
       let b = background[0][bdice];
       let bi = background[1][bdice];
       document.getElementById("background").innerHTML = b;
@@ -458,7 +484,7 @@
       document.getElementById("intention1").innerHTML = i1;
       //document.getElementById("intention2").innerHTML = i2;
 
-      let edice = d6();
+      //let edice = d6();
       
       let e = experience[bdice];
       let e1 = dn(e.length);
@@ -479,8 +505,26 @@
       let e1dice = dn(equipment[0].length);
 
       let equip1 = equipment[0][e1dice];
-
       document.getElementById("equip1").innerHTML = equip1;
+
+
+      let statsMarkup = "<ul>";
+      let stat1Dice = dn(statLabels.length);
+      let stat1 = statLabels[stat1Dice]
+      statsMarkup += "<li>"+ stat1  +" (four d6) </li>";
+
+      
+      let stat2Dice = dn(statLabels.length);
+      while(stat2Dice == stat1Dice){
+        stat2Dice = dn(statLabels.length);
+      }
+      let stat2 = statLabels[stat2Dice]
+
+      statsMarkup += "<li>"+ stat2  +" (three d6) </li>";
+      statsMarkup += '</ul>';
+
+      document.getElementById("expertise").innerHTML = statsMarkup;
+    
 
       let finalId = bdice;
       document.getElementById("idcode").innerHTML = "--" + finalId + "-" + e1dice + "-" + e1 + "-"
@@ -533,7 +577,9 @@
     <p style="margin-left:-20px; margin-right:-20px; padding: 0px;"><img width="100%" src="/imgs/fold.png"></p>
 
  
-    
+    <p class="full-width title"><span class="label">Expertise:</span></p>
+    <p class="full-width full-inject"><span id="expertise"></span></p>
+
     <p class="full-width title"><span class="label">Ability:</span></p>
     <p class="full-width full-inject"><span id="experience"></span></p>
     
